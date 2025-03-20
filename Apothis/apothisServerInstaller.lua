@@ -1,24 +1,24 @@
-local NAME = "Apothis Client Installer"
+local NAME = "Apothis Server Installer"
 
 local DOWNLOADS = {}
 local argStr = table.concat({...}, " ")
 
 DOWNLOADS[#DOWNLOADS + 1] = "https://raw.githubusercontent.com/Valynrax/ccArcanum/refs/heads/main/Apothis/apothisVersion.txt"
-DOWNLOADS[#DOWNLOADS + 1] = "https://raw.githubusercontent.com/Valynrax/ccArcanum/refs/heads/main/Apothis/apothisClient.lua"
-DOWNLOADS[#DOWNLOADS + 1] = "https://raw.githubusercontent.com/Valynrax/ccArcanum/refs/heads/main/lib/apothisAPI.lua"
+DOWNLOADS[#DOWNLOADS + 1] = "https://raw.githubusercontent.com/Valynrax/ccArcanum/refs/heads/main/Apothis/apothisServer.lua"
 DOWNLOADS[#DOWNLOADS + 1] = "https://raw.githubusercontent.com/Valynrax/ccArcanum/refs/heads/main/lib/arcanumAPI.lua"
 DOWNLOADS[#DOWNLOADS + 1] = "https://raw.githubusercontent.com/Valynrax/ccArcanum/refs/heads/main/lib/ecnet2.lua"
--- DOWNLOADS[#DOWNLOADS + 1] = ""
+DOWNLOADS[#DOWNLOADS + 1] = "https://raw.githubusercontent.com/Valynrax/ccArcanum/refs/heads/main/Apothis/apothisCharacter.lua"
+
 
 local disableComputerValidation = false
 local width, height = term.getSize()
 local totalDownloaded = 0
 local barLine = 6
 local line = 8
-local installFolder = "apothisClient"
-local isTurtle = false
-if turtle then
-    isTurtle = true
+local installFolder = "apothisServer"
+local isPocket = false
+if pocket then
+    isPocket = true
 end
 
 local function update(text)
@@ -74,13 +74,10 @@ local function downloadAll(downloads, total)
         end)
     end
 end
-
 local function rewriteStartup()
     local file = fs.open("startup", "w")
-
-    file.writeLine("shell.run(\"".. installFolder .. "/apothisClientInstaller.lua\")")
     file.writeLine("while (true) do")
-    file.writeLine("	shell.run(\"" .. installFolder .. "/apothisClient.lua\")")
+    file.writeLine("	shell.run(\"" .. installFolder .. "/apothisServer.lua\")")
     file.writeLine("	sleep(1)")
     file.writeLine("end")
     file.close()
@@ -108,35 +105,14 @@ local function removeOldVersion()
     end
 end
 
-local function getModemSide()
-    local sides = peripheral.getNames()
-    for _, side in ipairs(sides) do
-        if peripheral.getType(side) == "modem" then
-            return side
-        end
-    end
-    return nil
-end
-
 local function validateComputer()
     if disableComputerValidation then
         return true
     end
-
-    if not isTurtle then
-        printError("This installer is only for Turtles!")
+    if isPocket then
+        printError("This installer is not intended for Pocket computer!")
         return false
     end
-    local modemSide = getModemSide()
-    if not modemSide then
-        printError("No modem found.")
-        return false
-    end
-    --local modem = peripheral.wrap(modemSide)
-    --if not modem.isWireless() then
-    --    printError("This installer is only for Pocket Computers with a wireless modem!")
-    --    return false
-    --end    
     return true
 end
 
@@ -174,7 +150,6 @@ local function install()
 
     removeOldVersion()
     downloadAll(DOWNLOADS, #DOWNLOADS)
-
     term.setCursorPos(1, line)
 
     term.setTextColor(colors.green)
@@ -186,43 +161,6 @@ local function install()
     end
     
     rewriteStartup()
-
-    if not fs.exists(".addresses.txt") then
-        local arcanumAPI = require "arcanumAPI"
-        local apothisAPI = require "apothisAPI"
-
-        update("Finding server...")
-        term.setTextColor(colors.black)
-        term.setBackgroundColor(colors.black)
-        term.setCursorPos(1, line + 1)
-
-        update("Searching for Apothis & Arcanum servers...")
-        local apothisServers = apothisAPI.getRunningServers(peripheral.getName(modem))
-        local arcanumServers = arcanumAPI.getRunningServers(peripheral.getName(modem))
-        if #apothisServers == 0 or #arcanumServers == 0 then
-            print("No Apothis or Arcanum Servers found")
-            return
-        end
-
-        -- FUTURE: Allow selection of server (for "Realms" of sort)
-        -- Might need a UI framework for that
-        local serverName = apothisServers[1].name:sub(1, 16) -- Strip to 16 Symbols
-        local file = fs.open(".addresses.txt")
-        file.write(apothisServers[1].address)
-        file.close()
-
-        serverName = arcanumServers[1].name:sub(1, 16) -- Strip to 16 Symbols
-        file = fs.open(".address.txt")
-        local addresses = {
-            ["apothis"] = file.readAll()
-            ["arcanum"] = arcanumServers[1].address
-        }
-        file.write(addresses)
-        file.close()
-
-        update("Apothis & Arcanum Servers set")
-    end
-
 
     for i = 1, 3 do
         term.setCursorPos(1, line)

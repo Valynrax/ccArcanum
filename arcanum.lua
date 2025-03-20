@@ -112,14 +112,10 @@ end
 
 
 local function checkToken(token)
-    if token == nil then
-        return "Please provide token"
-    end
+    if token == nil then return "Please provide token" end
 
     local sessions = loadSessions()
-    if sessions[token] == nil then
-        return "Session not found"
-    end
+    if sessions[token] == nil then return "Session not found" end
 
     local session = sessions[token]
     if isSessionExpired(session) then
@@ -130,6 +126,7 @@ local function checkToken(token)
 
     return true
 end
+
 
 local function getModemSide()
     local sides = peripheral.getNames()
