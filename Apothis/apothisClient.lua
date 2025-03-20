@@ -36,42 +36,10 @@ local function getVersion()
     return version
 end
 
--- Function to request healing if needed
-local function requestHeal()
-    if clientData.health and clientData.maxHealth and clientData.health ~= clientData.maxHealth then
-        local token = arcanumAPI.readToken()
-        if not token then
-            log("No valid authentication token")
-            return
-        end
-
-        local connection = apothisAPI.createConnection()
-        if connection == nil then
-            log("Cannot connect to Apothis Server")
-            return
-        end
-
-        connection:send({ command = "heal", token = token })
-        local response = apothisAPI.waitResponse(connection, 2)
-
-        if response == nil then
-            log("Heal request timeout")
-        elseif response.health then
-            clientData.health = response.health
-            log("Healed to: " .. clientData.health)
-        end
-
-        connection:send({ command = "close" })
-    end
-end
-
 -- Function to process commands from controller
 local function handleCommand(command)
     if string.find(command, "move") ~= nil then
-        local success = apothisAPI.Movement(command)
-        if success then
-            requestHeal() -- Check for healing only if movement was successful
-        end
+        apothisAPI.Movement(command)
     elseif command == "interact" then
         apothisAPI.Interact("interact")
     else
