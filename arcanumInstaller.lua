@@ -3,11 +3,11 @@ local NAME = "Arcanum Server Installer"
 local DOWNLOADS = {}
 local argStr = table.concat({...}, " ")
 
-DOWNLOADS[#DOWNLOADS + 1] = "" -- version.txt
-DOWNLOADS[#DOWNLOADS + 1] = "https://raw.githubusercontent.com/Valynrax/CCValynrax/refs/heads/main/Arcanum/main/server.lua"
-DOWNLOADS[#DOWNLOADS + 1] = "https://raw.githubusercontent.com/Valynrax/CCValynrax/refs/heads/main/Arcanum/main/config.lua"
-DOWNLOADS[#DOWNLOADS + 1] = "https://raw.githubusercontent.com/Valynrax/CCValynrax/refs/heads/main/Arcanum/lib/arcanumAPI.lua"
-DOWNLOADS[#DOWNLOADS + 1] = "https://raw.githubusercontent.com/Valynrax/CCValynrax/refs/heads/main/Arcanum/lib/ecnet2.lua"
+DOWNLOADS[#DOWNLOADS + 1] = "https://raw.githubusercontent.com/Valynrax/ccArcanum/refs/heads/main/arcanumVersion.txt"
+DOWNLOADS[#DOWNLOADS + 1] = "https://raw.githubusercontent.com/Valynrax/ccArcanum/refs/heads/main/arcanum.lua"
+DOWNLOADS[#DOWNLOADS + 1] = "https://raw.githubusercontent.com/Valynrax/ccArcanum/refs/heads/main/lib/config.lua"
+DOWNLOADS[#DOWNLOADS + 1] = "https://raw.githubusercontent.com/Valynrax/ccArcanum/refs/heads/main/lib/arcanumAPI.lua"
+DOWNLOADS[#DOWNLOADS + 1] = "https://raw.githubusercontent.com/Valynrax/ccArcanum/refs/heads/main/lib/ecnet2.lua"
 
 
 local disableComputerValidation = false
@@ -77,7 +77,7 @@ end
 local function rewriteStartup()
     local file = fs.open("startup", "w")
     file.writeLine("while (true) do")
-    file.writeLine("	shell.run(\"" .. installFolder .. "/server.lua\")")
+    file.writeLine("	shell.run(\"" .. installFolder .. "/arcanum.lua\")")
     file.writeLine("	sleep(1)")
     file.writeLine("end")
     file.close()

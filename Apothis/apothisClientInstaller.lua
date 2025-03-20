@@ -3,11 +3,11 @@ local NAME = "Apothis Client Installer"
 local DOWNLOADS = {}
 local argStr = table.concat({...}, " ")
 
--- DOWNLOADS[#DOWNLOADS + 1] = "" -- version.txt
-DOWNLOADS[#DOWNLOADS + 1] = "https://raw.githubusercontent.com/Valynrax/CCValynrax/refs/heads/main/Arcanum/apothis/client.lua"
-DOWNLOADS[#DOWNLOADS + 1] = "https://raw.githubusercontent.com/Valynrax/CCValynrax/refs/heads/main/Arcanum/apothis/apothisAPI.lua"
-DOWNLOADS[#DOWNLOADS + 1] = "https://raw.githubusercontent.com/Valynrax/CCValynrax/refs/heads/main/Arcanum/lib/arcanumAPI.lua"
-DOWNLOADS[#DOWNLOADS + 1] = "https://raw.githubusercontent.com/Valynrax/CCValynrax/refs/heads/main/Arcanum/lib/ecnet2.lua"
+DOWNLOADS[#DOWNLOADS + 1] = "https://raw.githubusercontent.com/Valynrax/ccArcanum/refs/heads/main/Apothis/apothisVersion.txt"
+DOWNLOADS[#DOWNLOADS + 1] = "https://raw.githubusercontent.com/Valynrax/ccArcanum/refs/heads/main/Apothis/apothisClient.lua"
+DOWNLOADS[#DOWNLOADS + 1] = "https://raw.githubusercontent.com/Valynrax/ccArcanum/refs/heads/main/lib/apothisAPI.lua"
+DOWNLOADS[#DOWNLOADS + 1] = "https://raw.githubusercontent.com/Valynrax/ccArcanum/refs/heads/main/lib/arcanumAPI.lua"
+DOWNLOADS[#DOWNLOADS + 1] = "https://raw.githubusercontent.com/Valynrax/ccArcanum/refs/heads/main/lib/ecnet2.lua"
 -- DOWNLOADS[#DOWNLOADS + 1] = ""
 
 local disableComputerValidation = false
@@ -78,9 +78,9 @@ end
 local function rewriteStartup()
     local file = fs.open("startup", "w")
 
-    file.writeLine("shell.run(\"".. installFolder .. "/clientInstaller.lua\")")
+    file.writeLine("shell.run(\"".. installFolder .. "/apothisClientInstaller.lua\")")
     file.writeLine("while (true) do")
-    file.writeLine("	shell.run(\"" .. installFolder .. "/client.lua\")")
+    file.writeLine("	shell.run(\"" .. installFolder .. "/apothisClient.lua\")")
     file.writeLine("	sleep(1)")
     file.writeLine("end")
     file.close()
