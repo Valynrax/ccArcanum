@@ -1,4 +1,3 @@
-local arcanumAPI = require "arcanumAPI"
 local apothisAPI = require "apothisAPI"
 local ecnet2 = require "ecnet2"
 
@@ -58,27 +57,87 @@ local function listenForCommands()
     }
 
     local listener = api:listen()
-    log("Listening for controller commands...")
+    print("Listening for controller commands...")
 
     while true do
-        local event, id, sender, message = os.pullEvent("ecnet2_message")
-
-        if id == listener.id then
+        local event, id, p2, p3, ch, dist = os.pullEvent()
+        local requestTime = os.time(os.date("*t"))
+        if event == "ecnet2_request" and id == apiListener.id then
             local data = message
             if data and data.command then
-                log("Received command: " .. data.command)
+                print("Received command: " .. data.command)
                 handleCommand(data.command)
             end
         end
     end
 end
 
+local function listenForMessages()
+    local identity = ecnet2.Identity(".identity")
+
+    local api = identity:Protocol {
+        name = "apothisAPI",
+        serialize = textutils.serialize,
+        deserialize = textutils.unserialize,
+    }
+
+    local listener = api:listen()
+    print("Listening for ApothisAPI messages")
+
+    while true do
+        local event, id, p2, p3, ch, dist = os.pullEvent()
+        local requestTime = os.time(os.date("*t"))
+        if event == "ecnet2_request" and id == apiListener.id then
+            local data = message
+            if data and data.command then
+                print(data.command)
+            end
+        end
+    end  
+end
+
+local function redraw()
+    term.clear()
+    term.setCursorPos(1,1)
+    
+    local limit = math.min(#notifications, 5)
+    for i = 1, limit do
+        print(notifications[#notifications - limit + i])
+    end
+    
+    -- Re-display user input
+    term.write("> " .. inputBuffer)
+end
+
+local function handleUserInput()
+    while true do
+        term.setCursorPos(3, select(2, term.getCursorPos())) -- Move cursor after "> "
+        local event, key = os.pullEvent("key")
+        if key == keys.enter then
+            if #inputBuffer > 0 then
+                print("") -- Move to new line after command
+                apothisAPI.Command(inputBuffer)
+                inputBuffer = "" -- Reset input buffer
+            end
+        elseif key == keys.backspace then
+            if #inputBuffer > 0 then
+                inputBuffer = inputBuffer:sub(1, -2)
+            end
+        else
+            local char = keys.getName(key)
+            if char and #char == 1 then
+                inputBuffer = inputBuffer .. char
+            end
+        end
+        redraw()
+    end
+end
+
 -- Main function to initialize everything
 local function main()
     local apothisServer = getServer("apothis")
-    local arcanumServer = getServer("arcanum")
 
-    if not apothisServer or not arcanumServer then
+    if not apothisServer then
         printError("Could not retrieve server addresses")
         return
     end
@@ -86,17 +145,16 @@ local function main()
     os.setComputerLabel("Apothis Client v" .. getVersion())
 
     local isInitiatedApothis = apothisAPI.init(apothisServer, modemSide, log)
-    local isInitiatedArcanum = arcanumAPI.init(arcanumServer, modemSide, log)
 
-    if not isInitiatedApothis or not isInitiatedArcanum then
-        printError("Apothis or Arcanum APIs failed to initialize")
+    if not isInitiatedApothis then
+        printError("Apothis API failed to initialize")
         return
     end
 
-    log("Client initialized successfully")
+    print("Client initialized successfully")
     
     -- Start listening for commands in parallel with the APIs
-    parallel.waitForAny(listenForCommands, function() arcanumAPI.start(main) end)
+    parallel.waitForAny(listenForCommands, listenForMessages, function() apothisAPI.start(main) end, handleUserInput)
 end
 
 main()

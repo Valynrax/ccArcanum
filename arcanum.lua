@@ -3,6 +3,11 @@ local random = require "ccryptolib.random"
 local sha256 = require "ccryptolib.sha256"
 local config = require "config"
 
+local apothisCharacter = nil
+if config["apothis"] then apothisCharacter = require "apothisCharacter" end
+
+local bankAccount = nil
+if config["banking"] then bankAccount = require "bankAccount" end
 
 local serverName = "Arcanum Master Server"
 local usersPath = '.users'
@@ -36,8 +41,8 @@ function User.new(login, password)
     self.password = bin_to_hex(sha256.pbkdf2(password, identity.address, 5))
     self.history = {}
 
-    -- TODO: Attach apothis if enabled
-    -- TODO: Attach banking if enabled
+    if config["apothis"] then self.apothisCharacter = apothisCharacter.new() end
+    if config["banking"] then self.bankAccount = bankAccount.new() end
     
     return self
 end

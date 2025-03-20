@@ -1,5 +1,6 @@
 local apothisAPI = {}
 local ecnet2 = require "ecnet2"
+local arcanumAPI = require "arcanumAPI"
 local random = require "ccryptolib.random"
 local serversChannel = 58235
 
@@ -84,7 +85,7 @@ local function readToken()
     return token
 end
 
-local function createConnection()
+local function connectToApothis()
     -- Create a connection to the server.
     log("Connecting to \"" .. server .. "\"")
     local connection = api:connect(server, "back")
@@ -102,6 +103,26 @@ local function ensureOnGround()
         local blockDownFound, _ = turtle.inspectDown()
         if blockDownFound then break end
         turtle.down()
+    end
+end
+
+function apothisAPI.Command(cmd)
+    local connection = createConnection()
+    if connection == nil then
+        return false, "Cannot connect to Apothis Server"
+    end
+
+    --local token = readToken()
+    --if not token then
+    --   connection:send({command = "close"})
+    --    return false, "Missing authentication token"
+    --end
+
+    if cmd == "login" then
+        write("Username: ") local username = read()
+        write("Password: ") local password = read("*")
+
+        local success, token = arcanumAPI.login(username, password)
     end
 end
 
@@ -141,7 +162,7 @@ function apothisAPI.Movement(moveType)
         -- FUTURE: Log movements to server to allow the creation of a live player map in towns/hub
 
         if clientData.health == nil or clientData.maxHealth == nil then
-            local connection = createConnection()
+            local connection = connectToApothis()
             if connection == nil then
                 return false, "Cannot connect to Apothis Server"
             end
@@ -166,7 +187,7 @@ function apothisAPI.Movement(moveType)
         end
 
         if clientData.health ~= clientData.maxHealth then
-            local connection = createConnection()
+            local connection = connectToApothis()
             if connection == nil then
                 return false, "Cannot connect to Apothis Server"
             end
@@ -195,7 +216,7 @@ function apothisAPI.Movement(moveType)
 end
 
 function apothisAPI.Interact()
-    local connection = createConnection()
+    local connection = connectToApothis()
     if connection == nil then
         return false, "Cannot connect to Apothis Server"
     end

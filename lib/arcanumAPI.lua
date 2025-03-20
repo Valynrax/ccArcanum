@@ -186,7 +186,7 @@ end
 function arcanumAPI.login(login, password)
     local connection = createConnection()
     if connection == nil then
-        return false, "Can't connect to the server"
+        return false, "Can't connect to the Arcanum server"
     end
     -- Send a message.
     connection:send({command = "login", login = login, password = password, isPocket = isPocket})
