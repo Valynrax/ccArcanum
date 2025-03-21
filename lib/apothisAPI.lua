@@ -112,17 +112,48 @@ function apothisAPI.Command(cmd)
         return false, "Cannot connect to Apothis Server"
     end
 
-    --local token = readToken()
-    --if not token then
-    --   connection:send({command = "close"})
-    --    return false, "Missing authentication token"
-    --end
-
     if cmd == "login" then
         write("Username: ") local username = read()
         write("Password: ") local password = read("*")
 
-        local success, token = arcanumAPI.login(username, password)
+        local success, user, token = arcanumAPI.login(username, password)
+
+        if success then
+            local tokenFile = fs.open(".token", "w")
+            tokenFile.write(token)
+            tokenFile.close()
+        end
+    end
+    
+    local token = readToken()
+    if not token then
+       connection:send({command = "close"})
+        return false, "Missing authentication token"
+    end
+    
+    if cmd == "stats" then
+        connection:send({command = "getStats", token = token})
+        local response = waitResponse(connection, timeout)
+        if response == nil then
+            connection:send({command = "close"})
+            return
+        end
+
+        local type = response['type']
+        local data = response['clientData']
+
+        if type == nil or data == nil then
+            log("Invalid Response")
+            connection:send({command = "close"})
+            return
+        end
+
+        print("Health: " .. data.health .. "/" .. data.maxHealth)
+        -- TODO: Skills
+
+        connection:send({command = "close"})
+    end
+
     end
 end
 

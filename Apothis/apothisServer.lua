@@ -85,7 +85,7 @@ local function verifyToken(token)
 
     connection:send({ command = "close" })
 
-    if response == true then
+    if response.type == "success" then
         tokenCache[token] = { timestamp = currentTime } -- Cache token validation time
     end
 
@@ -135,9 +135,11 @@ local function main()
                 users[token].position = data.position
                 saveUsers(users)
                 sender:send({ type = "success", position = users[token].position })
-            elseif command == "getClientData" then
+            elseif command == "getStats" then
                 local character = users[token]
                 sender:send({ type = "sendClientData", clientData = { health = character.health, maxHealth = character.maxHealth })
+            else if command == "tokenFromArcanum" then
+
             else
                 sender:send({ type = "error", message = "Unknown command" })
             end

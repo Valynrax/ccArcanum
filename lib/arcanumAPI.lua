@@ -214,7 +214,7 @@ function arcanumAPI.login(login, password)
         tokenFile.write(token)
         tokenFile.close()
         connection:send({command = "close"})
-        return true, user
+        return true, user, token
     end 
 end
 

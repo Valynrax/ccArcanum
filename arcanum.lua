@@ -293,6 +293,28 @@ local function main()
                     print("User \"" .. session.login .. "\" logged out")
                 end
 
+            elseif command == 'checkToken' then
+                local token = data['token']
+                if not token then
+                    connections[id]:send({type='failure', message="No token provided"})
+                end
+
+                local sessions = loadSessions() -- Load active session data
+                local session = sessions[token]
+
+                if not session then
+                    connections[id]:send({type='failure', message="Invalid session token"})
+                end
+
+                -- Check if session has expired
+                if isSessionExpired(session) then
+                    sessions[token] = nil -- Remove expired session
+                    writeSessions(sessions) -- Save updated session data
+                    connections[id]:send({type='failure', message="Session expired"})
+                end
+
+                connections[id]:send({type='success', message="Token Verified"})
+
             else
                 connections[id]:send({type='error', message="Bad request"})
             end
