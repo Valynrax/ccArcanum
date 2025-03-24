@@ -1,6 +1,6 @@
 local ecnet2 = require "ecnet2"
 local arcanumAPI = require "arcanumAPI" -- Required to find Arcanum dynamically
-local character = require "apothisCharacter"
+local character = require "character"
 local identity = ecnet2.Identity(".identity")
 
 local usersPath = ".apothis_users"
