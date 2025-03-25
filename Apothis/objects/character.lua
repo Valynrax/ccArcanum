@@ -3,7 +3,9 @@ local EquipmentDatabase = require "equipmentDatabase"
 Character = {}
 Character.__index = Character
 
-local skillCap = 40
+local function getXPForLevel(level)
+    return math.floor(0.25 * ((level - 1) + 300 * math.pow(2, (level - 1) / 7)))
+end
 
 function Character.new()
     local self = setmetatable({}, Character)
@@ -141,41 +143,50 @@ function Character.new()
 
     -- Skills
     self.skills = {
-        ["combat"] = {
+        ["attack"] = {
             level = 1,
-            xp = 0.0,
-            mastery = 0
+            xp = 0.0
+        },
+        ["strength"] = {
+            level = 1,
+            xp = 0.0
+        },
+        ["defense"] = {
+            level = 1,
+            xp = 0.0
+        },
+        ["magic"] = {
+            level = 1,
+            xp = 0.0
+        },
+        ["ranged"] = {
+            level = 1,
+            xp = 0.0
         },
         ["health"] = {
             level = 1,
-            xp = 0.0,
-            mastery = 0
+            xp = 0.0
         }
         ["mining"] = {
             level = 1,
-            xp = 0.0,
-            mastery = 0
+            xp = 0.0
         },
         ["woodcutting"] = {
-            level = 0,
-            xp = 0.0,
-            mastery = 0
+            level = 1,
+            xp = 0.0
         },
         ["smithing"] = {
             level = 1,
-            xp = 0.0,
-            mastery = 0
+            xp = 0.0
         }
     }
 
     function self:gainXP(skill, amount)
         self.skills[skill].xp = self.skills[skill].xp + amount
 
-        if self.skills[skill].xp >= 10 * (self.skills[skill].level ^ 2) and self.skills[skill].level < skillCap then
+        if self.skills[skill].xp >= getXPForLevel(self.skills[skill].level + 1) then
             self.skills[skill].level = self.skills[skill].level + 1
         end
-
-        -- TODO: Implement Mastery system eventually.
     end
 
     -- Quests & Progress (Future Expansion)
