@@ -222,6 +222,52 @@ EquipmentDatabase["dagger_iron"] = Equipment.new("Iron Dagger", "EitherHand", {
 -- Celestium Weapons
 -- Celestium Armor
 
+-- Pale Weapons
+EquipmentDatabase["wand_pale"] = Equipment.new("Pale Wand", "MainHand", {
+	level = 1,
+	description = "",
+	attackType = "Magic",
+
+	modifiers = {
+		accuracy = { Stab = 0, Slash = 0, Crush = 0, Magic = 2, Ranged = 0 },
+        defense = { Stab = 0, Slash = 0, Crush = 0, Magic = 0, Ranged = 0 },
+		bonus = { Melee = 0, Magic = 5, Ranged = 0 },
+		attackSpeed = 0,
+		criticalChance = 0,
+		weight = 0
+    }
+})
+
+EquipmentDatabase["core_pale"] = Equipment.new("Pale Core", "OffHand", {
+	level = 1,
+	description = "",
+	attackType = "Magic",
+
+	modifiers = {
+		accuracy = { Stab = 0, Slash = 0, Crush = 0, Magic = 2, Ranged = 0 },
+        defense = { Stab = 0, Slash = 0, Crush = 0, Magic = 0, Ranged = 0 },
+		bonus = { Melee = 0, Magic = 5, Ranged = 0 },
+		attackSpeed = 0,
+		criticalChance = 0,
+		weight = 0
+    }
+})
+
+EquipmentDatabase["staff_pale"] = Equipment.new("Pale Staff", "Two-Handed", {
+	level = 1,
+	description = "",
+	attackType = "Magic",
+
+	modifiers = {
+		accuracy = { Stab = 0, Slash = 0, Crush = 0, Magic = 5, Ranged = 0 },
+        defense = { Stab = 0, Slash = 0, Crush = 0, Magic = 0, Ranged = 0 },
+		bonus = { Melee = 0, Magic = 11, Ranged = 0 },
+		attackSpeed = 0,
+		criticalChance = 0,
+		weight = 0
+    }
+})
+
 
 function EquipmentDatabase.getItem(name)
 	return EquipmentDatabase[name] or nil
@@ -231,24 +277,47 @@ return EquipmentDatabase
 
 --[[
 local function calculateDamage(attacker, defender, attackType)
-	-- TODO: Adjust calcs to be based on current attackType
 	-- TODO: Crits; on crit, max hit
-	local attackLevel = attacker.skills["attack"].level or 1
-	local strengthLevel = attacker.skills["strength"].level or 1
-	local strengthBonus = attacker.stats["bonus"]["melee"] or 1
-	local defenseLevel = defender.skills["defense"].level or 1
+	-- TODO: Get Style Bonus
 
-	local attackAccuracy = attacker.stats["accuracy"] or 0
-	local defenseRating = defender.stats["defense"] or 0
+	if attackType == "Melee" then
+		local attackLevel = attacker.skills["attack"].level
+		local strengthLevel = attacker.skills["strength"].level
+		local meleeBonus = attacker.stats["bonus"]["melee"]
+		local defenseLevel = defender.skills["defense"].level
 
-	local attackStat = attackLevel * (attackAccuracy + 64)
-	local defenseStat = defenseLevel * (defenseRating + 64)
+		local playerAccuracy = attacker.stats["accuracy"][attackType]
+		local defenseRating = defender.stats["defense"][attackType]
 
-	local hitRatio = attackStat / (attackStat + defenseStat)
-	
-	local maxHit = math.floor(((((strengthLevel * (strengthBonus + 64)) / 640) + 1) / 1.5) + 0.5)
-	local minHit = math.floor((1 + ((hitRatio ^ 2) / 2 ) * (maxHit - 1)) + 0.5)
+		local attackStat = attackLevel * (playerAccuracy + 64)
+		local defenseStat = defenseLevel * (defenseRating + 64)
 
-	local damage = math.floor((minHit + (hitRatio * (maxHit - minHit))) + 0.5)
+		local accuracy = attackStat / (attackStat + defenseStat)
+
+		-- (((strengthLevel + potionBonus) * prayerBonus) + Style Bonus + 8) * Void Bonus
+		local effectiveStrength = (((strengthLevel + 0) * 1) + 3 + 8) * 1
+		local maxHit = math.floor(0.5 + (effectiveStrength * ((meleeBonus + 64) / 640)))
+		local minHit = math.floor((1 + ((accuracy ^ 2) / 2) * (maxHit - 1)) + 0.5)
+
+		local damage = math.floor((minHit + (maxHit - minHit) * math.random() ^ accuracy) + 0.5)
+	else if attackType == "Magic" then
+		local magicLevel = attacker.skills["magic"].level
+		local magicBonus = attacker.stats["bonus"]["magic"]
+		local playerAccuracy = attacker.stats["accuracy"][attackType]
+		local defenseRating = defender.stats["defense"][attackType]
+
+		local magicStat = magicLevel * (playerAccuracy + 64)
+		local defenseStat = defenseLevel * (defenseRating + 64)
+
+		local accuracy = magicStat / (magicStat + defenseStat)
+
+		local effectiveMagic = (((magicLevel + 0) * 1) + magicBonus + 8) * 1
+		local maxHit = math.floor(0.5 + (effectiveMagic * ((magicBonus + 64) / 640)))
+		local minHit = math.floor((1 + ((accuracy ^ 2) / 2) * (maxHit - 1)) + 0.5)
+
+		local damage = math.floor((minHit + (maxHit - minHit) * math.random() ^ accuracy) + 0.5)
+	else if attackType == "Ranged" then
+
+	end
 end
 ]]--
