@@ -92,6 +92,7 @@ local function verifyToken(token)
     return response == true, response
 end
 
+local connections = {}
 local function main()
     if not arcanumServer then
         printError("Arcanum server not found, exiting.")
@@ -111,37 +112,45 @@ local function main()
         local event, id, p2, p3, ch, dist = os.pullEvent()
         local requestTime = os.time(os.date("*t"))
         if event == "ecnet2_request" and id == apiListener.id then
-            local data = message
-            local token = data.token
-            local command = data.command
+            local connection = apiListener:accept("Connected to APOTHIS API", p2)
+            connections[connection.id] = connection
+        elseif event == "ecnet2_message" and connections[id] then
+            local data = select(1, p3)
+            local command = data['command']
+            local token = data['token']
 
             if not token or not users[token] then
                 local isValid, msg = verifyToken(token)
                 if not isValid then
-                    sender:send({ type = "error", message = msg or "Invalid session" })
+                    connections[id]:send({ type = "error", message = msg or "Invalid session" })
                     goto continue
                 end
                 users[token] = character.new()
                 saveUsers(users)
             end
 
-            -- Handle Commands
-            if command == "heal" then
+            if command == "close" then
+                connections[id] = nil
+
+            elseif command == "heal" then
                 local user = users[token]
                 user.health = user.health + 1
                 saveUsers(users)
-                sender:send({ type = "success", health = user.health })
+                connections[id]:send({ type = "success", health = user.health })
+
             elseif command == "updatePosition" then
                 users[token].position = data.position
                 saveUsers(users)
-                sender:send({ type = "success", position = users[token].position })
+                connections[id]:send({ type = "success", position = users[token].position })
+
             elseif command == "getStats" then
                 local character = users[token]
-                sender:send({ type = "sendClientData", clientData = { health = character.health, maxHealth = character.maxHealth })
+                connections[id]:send({ type = "sendClientData", clientData = { health = character.health, maxHealth = character.maxHealth })
+
             else if command == "tokenFromArcanum" then
 
             else
-                sender:send({ type = "error", message = "Unknown command" })
+                connections[id]:send({ type = "error", message = "Unknown command" })
             end
 
             ::continue::

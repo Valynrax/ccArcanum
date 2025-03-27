@@ -152,9 +152,6 @@ local function main()
     end
 
     print("Client initialized successfully")
-    
-    -- Start listening for commands in parallel with the APIs
-    parallel.waitForAny(listenForCommands, listenForMessages, function() apothisAPI.start(main) end, handleUserInput)
 end
 
-main()
+parallel.waitForAny(function() apothisAPI.start(main) end, listenForCommands, listenForMessages, handleUserInput)

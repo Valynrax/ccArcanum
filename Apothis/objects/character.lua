@@ -178,6 +178,22 @@ function Character.new()
         ["smithing"] = {
             level = 1,
             xp = 0.0
+        },
+        ["thaumaturgy"] = {
+            level = 1,
+            xp = 0.0
+        },
+        ["fletching"] = {
+            level = 1,
+            xp = 0.0
+        },
+        ["farming"] = {
+            level = 1,
+            xp = 0.0
+        },
+        ["cooking"] = {
+            level = 1,
+            xp = 0.0
         }
     }
 
