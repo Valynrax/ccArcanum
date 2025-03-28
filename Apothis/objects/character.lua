@@ -194,6 +194,10 @@ function Character.new()
         ["cooking"] = {
             level = 1,
             xp = 0.0
+        },
+        ["fishing"] = {
+            level = 1,
+            xp = 0.0
         }
     }
 

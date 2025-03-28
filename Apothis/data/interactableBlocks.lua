@@ -31,14 +31,28 @@ local interactableBlocks = {
         },
         resource = "ore_copper",
         amount = {
-            min = 5,
-            max = 7
+            min = 1,
+            max = 2
         },
-        xp = 7
+        xp = 17.5
+    },
+    ["minecraft:tin_ore"] = {
+        skill = "mining",
+        reqLevel = 1,
+        duration = {
+            min = 2,
+            max = 4
+        },
+        resource = "ore_tin",
+        amount = {
+            min = 1,
+            max = 2
+        },
+        xp = 17.5
     },
     ["minecraft:iron_ore"] = {
         skill = "mining",
-        reqLevel = 5,
+        reqLevel = 10,
         duration = {
             min = 5,
             max = 7
@@ -48,11 +62,11 @@ local interactableBlocks = {
             min = 1,
             max = 3
         },
-        xp = 15
+        xp = 26.5
     },
     ["minecraft:coal_ore"] = {
         skill = "mining",
-        reqLevel = 10,
+        reqLevel = 20,
         duration = {
             min = 6,
             max = 8
@@ -62,11 +76,11 @@ local interactableBlocks = {
             min = 1,
             max = 3
         },
-        xp = 25
+        xp = 35.5
     },
     ["minecraft:lapis_ore"] = {
         skill = "mining",
-        reqLevel = 15,
+        reqLevel = 30,
         duration = {
             min = 6,
             max = 8
@@ -76,22 +90,22 @@ local interactableBlocks = {
             min = 1,
             max = 3
         },
-        xp = 35
+        xp = 50
     },
     ["minecraft:gold_ore"] = {
         skill = "mining",
-        reqLevel = 15,
+        reqLevel = 30,
         duration = {
             min = 6,
             max = 8
         },
         resource = "ore_gold",
         amount = 1,
-        xp = 30
+        xp = 45
     },
     ["minecraft:redstone_ore"] = {
         skill = "mining",
-        reqLevel = 20,
+        reqLevel = 40,
         duration = {
             min = 7,
             max = 9
@@ -101,11 +115,25 @@ local interactableBlocks = {
             min = 1,
             max = 3
         },
-        xp = 45
+        xp = 65
+    },
+    ["minecraft:ancient_debris"] = {
+        skill = "mining",
+        reqLevel = 50,
+        duration = {
+            min = 8,
+            max = 10
+        },
+        resource = "diamond",
+        amount = {
+            min = 1,
+            max = 3
+        },
+        xp = 75
     },
     ["minecraft:emerald_ore"] = {
         skill = "mining",
-        reqLevel = 25,
+        reqLevel = 60,
         duration = {
             min = 7,
             max = 9
@@ -115,11 +143,11 @@ local interactableBlocks = {
             min = 1,
             max = 3
         },
-        xp = 55
+        xp = 85
     },
     ["minecraft:diamond_ore"] = {
         skill = "mining",
-        reqLevel = 30,
+        reqLevel = 70,
         duration = {
             min = 8,
             max = 10
@@ -129,21 +157,7 @@ local interactableBlocks = {
             min = 1,
             max = 3
         },
-        xp = 65
-    },
-    ["minecraft:ancient_debris"] = {
-        skill = "mining",
-        reqLevel = 40,
-        duration = {
-            min = 8,
-            max = 10
-        },
-        resource = "diamond",
-        amount = {
-            min = 1,
-            max = 3
-        },
-        xp = 85
+        xp = 95
     },
 
     -- Woodcutting Materials
@@ -159,11 +173,11 @@ local interactableBlocks = {
             min = 1,
             max = 3
         },
-        xp = 7
+        xp = 25
     },
     ["minecraft:birch_log"] = {
         skill = "woodcutting",
-        reqLevel = 5,
+        reqLevel = 10,
         duration = {
             min = 2,
             max = 4
@@ -173,11 +187,11 @@ local interactableBlocks = {
             min = 1,
             max = 3
         },
-        xp = 15
+        xp = 32
     },
     ["minecraft:spruce_log"] = {
         skill = "woodcutting",
-        reqLevel = 10,
+        reqLevel = 20,
         duration = {
             min = 3,
             max = 5
@@ -187,11 +201,11 @@ local interactableBlocks = {
             min = 1,
             max = 3
         },
-        xp = 25
+        xp = 55
     },
     ["minecraft:jungle_log"] = {
         skill = "woodcutting",
-        reqLevel = 15,
+        reqLevel = 30,
         duration = {
             min = 3,
             max = 5
@@ -201,11 +215,11 @@ local interactableBlocks = {
             min = 1,
             max = 3
         },
-        xp = 35
+        xp = 67.5
     },
     ["minecraft:acacia_log"] = {
         skill = "woodcutting",
-        reqLevel = 20,
+        reqLevel = 40,
         duration = {
             min = 4,
             max = 6
@@ -215,11 +229,11 @@ local interactableBlocks = {
             min = 1,
             max = 3
         },
-        xp = 45
+        xp = 92.5
     },
     ["minecraft:dark_oak_log"] = {
         skill = "woodcutting",
-        reqLevel = 25,
+        reqLevel = 50,
         duration = {
             min = 4,
             max = 6
@@ -229,11 +243,11 @@ local interactableBlocks = {
             min = 1,
             max = 3
         },
-        xp = 55
+        xp = 125
     },
     ["minecraft:mangrove_log"] = {
         skill = "woodcutting",
-        reqLevel = 30,
+        reqLevel = 60,
         duration = {
             min = 5,
             max = 7
@@ -243,11 +257,11 @@ local interactableBlocks = {
             min = 1,
             max = 3
         },
-        xp = 65
+        xp = 175
     },
     ["minecraft:crimson_stem"] = {
         skill = "woodcutting",
-        reqLevel = 35,
+        reqLevel = 70,
         duration = {
             min = 5,
             max = 7
@@ -257,11 +271,11 @@ local interactableBlocks = {
             min = 1,
             max = 3
         },
-        xp = 75
+        xp = 235
     },
     ["minecraft:warped_stem"] = {
         skill = "woodcutting",
-        reqLevel = 40,
+        reqLevel = 80,
         duration = {
             min = 6,
             max = 8
@@ -271,7 +285,7 @@ local interactableBlocks = {
             min = 1,
             max = 3
         },
-        xp = 85
+        xp = 317.5
     },
 }
 

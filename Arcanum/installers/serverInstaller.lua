@@ -3,8 +3,8 @@ local NAME = "Arcanum Server Installer"
 local DOWNLOADS = {}
 local argStr = table.concat({...}, " ")
 
-DOWNLOADS[#DOWNLOADS + 1] = "https://raw.githubusercontent.com/Valynrax/ccArcanum/refs/heads/main/arcanumVersion.txt"
-DOWNLOADS[#DOWNLOADS + 1] = "https://raw.githubusercontent.com/Valynrax/ccArcanum/refs/heads/main/arcanum.lua"
+DOWNLOADS[#DOWNLOADS + 1] = "https://raw.githubusercontent.com/Valynrax/ccArcanum/refs/heads/main/Arcanum/version.txt"
+DOWNLOADS[#DOWNLOADS + 1] = "https://raw.githubusercontent.com/Valynrax/ccArcanum/refs/heads/main/Arcanum/server.lua"
 DOWNLOADS[#DOWNLOADS + 1] = "https://raw.githubusercontent.com/Valynrax/ccArcanum/refs/heads/main/lib/config.lua"
 DOWNLOADS[#DOWNLOADS + 1] = "https://raw.githubusercontent.com/Valynrax/ccArcanum/refs/heads/main/lib/arcanumAPI.lua"
 DOWNLOADS[#DOWNLOADS + 1] = "https://raw.githubusercontent.com/Valynrax/ccArcanum/refs/heads/main/lib/ecnet2.lua"
@@ -15,7 +15,7 @@ local width, height = term.getSize()
 local totalDownloaded = 0
 local barLine = 6
 local line = 8
-local installFolder = "aranumServer"
+local installFolder = "arcanum"
 local isPocket = false
 if pocket then
     isPocket = true
@@ -76,8 +76,10 @@ local function downloadAll(downloads, total)
 end
 local function rewriteStartup()
     local file = fs.open("startup", "w")
+
+    file.writeLine("shell.run(\"".. installFolder .. "/serverInstaller.lua\")")
     file.writeLine("while (true) do")
-    file.writeLine("	shell.run(\"" .. installFolder .. "/arcanum.lua\")")
+    file.writeLine("	shell.run(\"" .. installFolder .. "/server.lua\")")
     file.writeLine("	sleep(1)")
     file.writeLine("end")
     file.close()

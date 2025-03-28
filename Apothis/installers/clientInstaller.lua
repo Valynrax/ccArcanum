@@ -3,7 +3,7 @@ local NAME = "Apothis Client Installer"
 local DOWNLOADS = {}
 local argStr = table.concat({...}, " ")
 
-DOWNLOADS[#DOWNLOADS + 1] = "https://raw.githubusercontent.com/Valynrax/ccArcanum/refs/heads/main/Apothis/apothisVersion.txt"
+DOWNLOADS[#DOWNLOADS + 1] = "https://raw.githubusercontent.com/Valynrax/ccArcanum/refs/heads/main/Apothis/version.txt"
 DOWNLOADS[#DOWNLOADS + 1] = "https://raw.githubusercontent.com/Valynrax/ccArcanum/refs/heads/main/Apothis/client.lua"
 DOWNLOADS[#DOWNLOADS + 1] = "https://raw.githubusercontent.com/Valynrax/ccArcanum/refs/heads/main/lib/apothisAPI.lua"
 DOWNLOADS[#DOWNLOADS + 1] = "https://raw.githubusercontent.com/Valynrax/ccArcanum/refs/heads/main/lib/arcanumAPI.lua"
@@ -78,9 +78,9 @@ end
 local function rewriteStartup()
     local file = fs.open("startup", "w")
 
-    file.writeLine("shell.run(\"".. installFolder .. "/apothisClientInstaller.lua\")")
+    file.writeLine("shell.run(\"".. installFolder .. "/clientInstaller.lua\")")
     file.writeLine("while (true) do")
-    file.writeLine("	shell.run(\"" .. installFolder .. "/apothisClient.lua\")")
+    file.writeLine("	shell.run(\"" .. installFolder .. "/client.lua\")")
     file.writeLine("	sleep(1)")
     file.writeLine("end")
     file.close()

@@ -436,5 +436,36 @@ RecipeDatabase["inert_staff_warped"] = Recipe.new("Carve Inert Warped Staff", 80
 
 -------------------------------------------
 
+-- Cooking Recipes
+RecipeDatabase["sunblossom_bread"] = Recipe.new("Bake Sunblossom Bread", 1, "cooking", 0, {
+	["sunblossom_wheat"] = 2
+})
+
+RecipeDatabase["shrimp_cooked"] = Recipe.new("Cook Raw Shrimp", 1, "cooking", 0, {
+	["shrimp_raw"] = 1
+})
+
+RecipeDatabase["sunblossom_fish_sandwich"] = Recipe.new("Make Sunblossom Shrimp Sandwich", 5, "cooking", 0, {
+	["sunblossom_bread"] = 1,
+	["shrimp_cooked"] = 1
+})
+
+RecipeDatabase["silverleaf_tea"] = Recipe.new("Brew Silverleaf Tea", 10, "cooking", 0, {
+	["silverleaf_mint"] = 1
+})
+
+RecipeDatabase["glowberry_salad"] = Recipe.new("Make Glowberry Salad", 15, "cooking", 0, {
+	["glowberry"] = 5,
+	["lettuce"] = 2
+})
+
+RecipeDatabase["hearty_meal"] = Recipe.new("Make Hearty Meal", 0, "cooking", 0, {
+	["cow_meat_cooked"] = 1,
+	["potato"] = 2,
+	["sunblossom_bread"] = 1
+})
+
+-------------------------------------------
+
 
 return RecipeDatabase
