@@ -153,8 +153,6 @@ function apothisAPI.Command(cmd)
 
         connection:send({command = "close"})
     end
-
-    end
 end
 
 function apothisAPI.Movement(moveType)
