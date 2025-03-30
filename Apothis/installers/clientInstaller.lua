@@ -187,46 +187,6 @@ local function install()
     
     rewriteStartup()
 
-    if not fs.exists(".addresses.txt") then
-        local arcanumAPI = require "arcanumAPI"
-        local apothisAPI = require "apothisAPI"
-
-        update("Finding server...")
-        term.setTextColor(colors.black)
-        term.setBackgroundColor(colors.black)
-        term.setCursorPos(1, line + 1)
-
-        update("Searching for Apothis & Arcanum servers...")
-        local apothisServers = apothisAPI.getRunningServers(peripheral.getName(modem))
-        local arcanumServers = arcanumAPI.getRunningServers(peripheral.getName(modem))
-        if #apothisServers == 0 or #arcanumServers == 0 then
-            print("No Apothis or Arcanum Servers found")
-            return
-        end
-
-        -- FUTURE: Allow selection of server (for "Realms" of sort)
-        -- Might need a UI framework for that
-        local serverName = apothisServers[1].name:sub(1, 16) -- Strip to 16 Symbols
-        local file = fs.open(".addresses.txt")
-        file.write(apothisServers[1].address)
-        file.close()
-
-        serverName = arcanumServers[1].name:sub(1, 16) -- Strip to 16 Symbols
-        file = fs.open(".addresses.txt")
-
-        print("Apothis Server Found: " .. file.readAll())
-        print("Arcanum Server Found: " .. arcanumServers[1].address)
-        local addresses = {
-            ["apothis"] = file.readAll(),
-            ["arcanum"] = arcanumServers[1].address
-        }
-        file.write(addresses)
-        file.close()
-
-        update("Apothis & Arcanum Servers set")
-    end
-
-
     for i = 1, 3 do
         term.setCursorPos(1, line)
         term.clearLine()
