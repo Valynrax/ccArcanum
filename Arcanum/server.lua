@@ -14,6 +14,8 @@ local usersPath = '.users'
 local sessionsPath = '.sessions'
 local serversChannel = 58235
 
+random.initWithTiming()
+math.randomseed(os.time())
 local identity = ecnet2.Identity(".identity")
 -- Backend
 
