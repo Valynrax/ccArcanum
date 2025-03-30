@@ -212,7 +212,7 @@ local function install()
         file.close()
 
         serverName = arcanumServers[1].name:sub(1, 16) -- Strip to 16 Symbols
-        file = fs.open(".address.txt")
+        file = fs.open(".addresses.txt")
         local addresses = {
             ["apothis"] = file.readAll(),
             ["arcanum"] = arcanumServers[1].address
