@@ -145,7 +145,7 @@ local function main()
 
             elseif command == "getStats" then
                 local character = users[token]
-                connections[id]:send({ type = "sendClientData", clientData = { health = character.health, maxHealth = character.maxHealth })
+                connections[id]:send({ type = "sendClientData", clientData = { health = character.health, maxHealth = character.maxHealth }})
 
             else if command == "tokenFromArcanum" then
 
