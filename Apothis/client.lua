@@ -2,7 +2,6 @@ local apothisAPI = require "apothisAPI"
 local ecnet2 = require "ecnet2"
 
 local disableLogging = true
-local modemSide = "top"
 local clientData = { health = nil, maxHealth = nil }
 
 local function log(message)
@@ -147,17 +146,17 @@ end
 
 -- Main function to initialize everything
 local function main()
+    local modemSide = getModemSide()
+    if not modemSide then
+        printError("No modem found.")
+        return false
+    end
+    
     if not fs.exists(".addresses.txt") then
         local arcanumAPI = require "arcanumAPI"
-
-        local modemSide = getModemSide()
-        if not modemSide then
-            printError("No modem found.")
-            return false
-        end
-        
         local apothisServers = apothisAPI.getRunningServers(modemSide)
         local arcanumServers = arcanumAPI.getRunningServers(modemSide)
+        
         if #apothisServers == 0 or #arcanumServers == 0 then
             print("No Apothis or Arcanum Servers found")
             return
