@@ -2,7 +2,7 @@ local apothisAPI = require "apothisAPI"
 local ecnet2 = require "ecnet2"
 
 local disableLogging = true
-local modemSide = "left"
+local modemSide = "top"
 local clientData = { health = nil, maxHealth = nil }
 
 local function log(message)
