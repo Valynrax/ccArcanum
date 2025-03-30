@@ -189,7 +189,7 @@ local function main()
 
     local isInitiatedApothis = apothisAPI.init(apothisServer, modemSide, log)
 
-    if not isInitiatedApothis then
+    if isInitiatedApothis == false then
         printError("Apothis API failed to initialize")
         return
     end
