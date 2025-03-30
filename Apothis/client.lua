@@ -182,4 +182,4 @@ local function main()
     print("Client initialized successfully")
 end
 
-parallel.waitForAny(function() apothisAPI.start(main) end, listenForCommands, listenForMessages, handleUserInput)
+parallel.waitForAny(main, listenForCommands, listenForMessages, handleUserInput)
