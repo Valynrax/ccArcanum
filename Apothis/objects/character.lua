@@ -166,7 +166,7 @@ function Character.new()
         ["health"] = {
             level = 1,
             xp = 0.0
-        }
+        },
         ["mining"] = {
             level = 1,
             xp = 0.0
