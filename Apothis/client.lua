@@ -20,8 +20,8 @@ local function getServer(serverType)
     local data = textutils.unserialize(file.readAll())
     file.close()
 
-    print(data)
-    print(data[serverType])
+    --print(data)
+    --print(data[serverType])
     return data and data[serverType] or nil
 end
 
