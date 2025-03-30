@@ -133,13 +133,29 @@ local function handleUserInput()
     end
 end
 
+local function getModemSide()
+    local sides = peripheral.getNames()
+    for _, side in ipairs(sides) do
+        if peripheral.getType(side) == "modem" then
+            return side
+        end
+    end
+    return nil
+end
+
 -- Main function to initialize everything
 local function main()
     if not fs.exists(".addresses.txt") then
         local arcanumAPI = require "arcanumAPI"
+
+        local modemSide = getModemSide()
+        if not modemSide then
+            printError("No modem found.")
+            return false
+        end
         
-        local apothisServers = apothisAPI.getRunningServers(peripheral.getName(modem))
-        local arcanumServers = arcanumAPI.getRunningServers(peripheral.getName(modem))
+        local apothisServers = apothisAPI.getRunningServers(peripheral.getName(modemSide))
+        local arcanumServers = arcanumAPI.getRunningServers(peripheral.getName(modemSide))
         if #apothisServers == 0 or #arcanumServers == 0 then
             print("No Apothis or Arcanum Servers found")
             return
