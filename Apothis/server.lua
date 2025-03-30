@@ -11,6 +11,17 @@ local tokenCache = {} -- Validated Arcanum tokens & last verification time
 
 setArcanumServer()
 
+local function getVersion()
+    local currentDirectory = fs.getDir(shell.getRunningProgram())
+    local versionFile = fs.open(currentDirectory .. "/version.txt", "r")
+    if not versionFile then
+        return "0.0.0"
+    end
+    local version = versionFile.readAll()
+    versionFile.close()
+    return version
+end
+
 -- Function to find and store server addresses
 local function setArcanumServer()
     local arcanumServers = arcanumAPI.getRunningServers(peripheral.getName(modem))
@@ -158,4 +169,5 @@ local function main()
     end
 end
 
-main()
+print("Apothis Master Server Initilaized on " .. getVersion())
+parallel.waitForAny(main, ecnet2.daemon)
