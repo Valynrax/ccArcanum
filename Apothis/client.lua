@@ -154,8 +154,8 @@ local function main()
             return false
         end
         
-        local apothisServers = apothisAPI.getRunningServers(peripheral.getName(modemSide))
-        local arcanumServers = arcanumAPI.getRunningServers(peripheral.getName(modemSide))
+        local apothisServers = apothisAPI.getRunningServers(modemSide)
+        local arcanumServers = arcanumAPI.getRunningServers(modemSide)
         if #apothisServers == 0 or #arcanumServers == 0 then
             print("No Apothis or Arcanum Servers found")
             return
