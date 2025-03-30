@@ -172,7 +172,7 @@ local function main()
             ["apothis"] = apothisServers[1].address,
             ["arcanum"] = arcanumServers[1].address
         }
-        file.write(addresses)
+        file.write(textutils.serialize(addresses))
         file.close()
     end
     
