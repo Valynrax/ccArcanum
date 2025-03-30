@@ -158,7 +158,7 @@ local function main()
                 local character = users[token]
                 connections[id]:send({ type = "sendClientData", clientData = { health = character.health, maxHealth = character.maxHealth }})
 
-            else if command == "tokenFromArcanum" then
+            elseif command == "tokenFromArcanum" then
 
             else
                 connections[id]:send({ type = "error", message = "Unknown command" })
