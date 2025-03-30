@@ -3,16 +3,16 @@ local NAME = "Apothis Server Installer"
 local DOWNLOADS = {}
 local argStr = table.concat({...}, " ")
 
-DOWNLOADS[#DOWNLOADS + 1] = "https://raw.githubusercontent.com/Valynrax/ccArcanum/refs/heads/main/Apothis/version.txt"
-DOWNLOADS[#DOWNLOADS + 1] = "https://raw.githubusercontent.com/Valynrax/ccArcanum/refs/heads/main/Apothis/server.lua"
-DOWNLOADS[#DOWNLOADS + 1] = "https://raw.githubusercontent.com/Valynrax/ccArcanum/refs/heads/main/lib/arcanumAPI.lua"
-DOWNLOADS[#DOWNLOADS + 1] = "https://raw.githubusercontent.com/Valynrax/ccArcanum/refs/heads/main/lib/ecnet2.lua"
-DOWNLOADS[#DOWNLOADS + 1] = "https://raw.githubusercontent.com/Valynrax/ccArcanum/refs/heads/main/Apothis/objects/character.lua"
-DOWNLOADS[#DOWNLOADS + 1] = "https://raw.githubusercontent.com/Valynrax/ccArcanum/refs/heads/main/Apothis/data/equipmentDatabase.lua"
-DOWNLOADS[#DOWNLOADS + 1] = "https://raw.githubusercontent.com/Valynrax/ccArcanum/refs/heads/main/Apothis/data/recipeDatabase.lua"
-DOWNLOADS[#DOWNLOADS + 1] = "https://raw.githubusercontent.com/Valynrax/ccArcanum/refs/heads/main/Apothis/objects/equipment.lua"
-DOWNLOADS[#DOWNLOADS + 1] = "https://raw.githubusercontent.com/Valynrax/ccArcanum/refs/heads/main/Apothis/objects/recipe.lua"
--- DOWNLOADS[#DOWNLOADS + 1] = ""
+DOWNLOADS[#DOWNLOADS + 1] = "https://raw.githubusercontent.com/Valynrax/ccArcanum/main/Apothis/version.txt"
+DOWNLOADS[#DOWNLOADS + 1] = "https://raw.githubusercontent.com/Valynrax/ccArcanum/main/Apothis/installers/serverInstaller.lua"
+DOWNLOADS[#DOWNLOADS + 1] = "https://raw.githubusercontent.com/Valynrax/ccArcanum/main/Apothis/server.lua"
+DOWNLOADS[#DOWNLOADS + 1] = "https://raw.githubusercontent.com/Valynrax/ccArcanum/main/lib/arcanumAPI.lua"
+DOWNLOADS[#DOWNLOADS + 1] = "https://raw.githubusercontent.com/Valynrax/ccArcanum/main/lib/ecnet2.lua"
+DOWNLOADS[#DOWNLOADS + 1] = "https://raw.githubusercontent.com/Valynrax/ccArcanum/main/Apothis/objects/character.lua"
+DOWNLOADS[#DOWNLOADS + 1] = "https://raw.githubusercontent.com/Valynrax/ccArcanum/main/Apothis/data/equipmentDatabase.lua"
+DOWNLOADS[#DOWNLOADS + 1] = "https://raw.githubusercontent.com/Valynrax/ccArcanum/main/Apothis/data/recipeDatabase.lua"
+DOWNLOADS[#DOWNLOADS + 1] = "https://raw.githubusercontent.com/Valynrax/ccArcanum/main/Apothis/objects/equipment.lua"
+DOWNLOADS[#DOWNLOADS + 1] = "https://raw.githubusercontent.com/Valynrax/ccArcanum/main/Apothis/objects/recipe.lua"
 
 local disableComputerValidation = false
 local width, height = term.getSize()
