@@ -9,8 +9,6 @@ local authCheckInterval = 3600 -- Re-Auth once an hour
 local arcanumServer = nil
 local tokenCache = {} -- Validated Arcanum tokens & last verification time
 
-setArcanumServer()
-
 local function getVersion()
     local currentDirectory = fs.getDir(shell.getRunningProgram())
     local versionFile = fs.open(currentDirectory .. "/version.txt", "r")
@@ -38,6 +36,8 @@ local function setArcanumServer()
 
     arcanumServer = arcanumServers[1].address
 end
+
+setArcanumServer()
 
 local function getServer()
     if not fs.exists(".addresses.txt") then
