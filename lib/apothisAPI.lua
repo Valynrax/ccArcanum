@@ -297,3 +297,5 @@ function apothisAPI.getRunningServers(modemSide)
         end
     end
 end
+
+return apothisAPI
