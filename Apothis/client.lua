@@ -18,7 +18,7 @@ local function getServer(serverType)
     end
 
     local file = fs.open(".addresses.txt", "r")
-    local data = textutils.unserialize(file.readAll())
+    local data = file.readAll()
     file.close()
 
     print(data)
@@ -174,7 +174,7 @@ local function main()
             ["apothis"] = apothisServers[1].address,
             ["arcanum"] = arcanumServers[1].address
         }
-        file.write(textutils.serialize(addresses))
+        file.write(addresses)
         file.close()
     end
     
