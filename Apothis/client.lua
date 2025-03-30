@@ -135,6 +135,34 @@ end
 
 -- Main function to initialize everything
 local function main()
+    if not fs.exists(".addresses.txt") then
+        local apothisServers = apothisAPI.getRunningServers(peripheral.getName(modem))
+        local arcanumServers = arcanumAPI.getRunningServers(peripheral.getName(modem))
+        if #apothisServers == 0 or #arcanumServers == 0 then
+            print("No Apothis or Arcanum Servers found")
+            return
+        end
+
+        -- FUTURE: Allow selection of server (for "Realms" of sort)
+        -- Might need a UI framework for that
+        local serverName = apothisServers[1].name:sub(1, 16) -- Strip to 16 Symbols
+        local file = fs.open(".addresses.txt")
+        file.write(apothisServers[1].address)
+        file.close()
+
+        serverName = arcanumServers[1].name:sub(1, 16) -- Strip to 16 Symbols
+        file = fs.open(".addresses.txt")
+
+        print("Apothis Server Found: " .. file.readAll())
+        print("Arcanum Server Found: " .. arcanumServers[1].address)
+        local addresses = {
+            ["apothis"] = file.readAll(),
+            ["arcanum"] = arcanumServers[1].address
+        }
+        file.write(addresses)
+        file.close()
+    end
+    
     local apothisServer = getServer("apothis")
 
     if not apothisServer then
