@@ -4,7 +4,7 @@ local sha256 = require "ccryptolib.sha256"
 local config = require "config"
 
 local apothisCharacter = nil
-if config["apothis"] then apothisCharacter = require "apothisCharacter" end
+if config["apothis"] then apothisCharacter = require "character" end
 
 local bankAccount = nil
 if config["banking"] then bankAccount = require "bankAccount" end
