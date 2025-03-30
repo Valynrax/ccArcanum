@@ -163,18 +163,13 @@ local function main()
 
         -- FUTURE: Allow selection of server (for "Realms" of sort)
         -- Might need a UI framework for that
-        local serverName = apothisServers[1].name:sub(1, 16) -- Strip to 16 Symbols
-        local file = fs.open(".addresses.txt")
-        file.write(apothisServers[1].address)
-        file.close()
-
-        serverName = arcanumServers[1].name:sub(1, 16) -- Strip to 16 Symbols
-        file = fs.open(".addresses.txt")
-
-        print("Apothis Server Found: " .. file.readAll())
+        --local apothsServerName = apothisServers[1].name:sub(1, 16) -- Strip to 16 Symbols
+        local file = fs.open(".addresses.txt", "w")
+        --serverName = arcanumServers[1].name:sub(1, 16) -- Strip to 16 Symbols
+        print("Apothis Server Found: " .. apothisServers[1].address)
         print("Arcanum Server Found: " .. arcanumServers[1].address)
         local addresses = {
-            ["apothis"] = file.readAll(),
+            ["apothis"] = apothisServers[1].address,
             ["arcanum"] = arcanumServers[1].address
         }
         file.write(addresses)
