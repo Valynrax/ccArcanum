@@ -136,6 +136,8 @@ end
 -- Main function to initialize everything
 local function main()
     if not fs.exists(".addresses.txt") then
+        local arcanumAPI = require "arcanumAPI"
+        
         local apothisServers = apothisAPI.getRunningServers(peripheral.getName(modem))
         local arcanumServers = arcanumAPI.getRunningServers(peripheral.getName(modem))
         if #apothisServers == 0 or #arcanumServers == 0 then
