@@ -22,7 +22,7 @@ local function getServer(serverType)
     file.close()
 
     print(data)
-    print(data[severType])
+    print(data[serverType])
     return data and data[serverType] or nil
 end
 
