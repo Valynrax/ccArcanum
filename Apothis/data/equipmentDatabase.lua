@@ -201,6 +201,21 @@ EquipmentDatabase["dagger_iron"] = Equipment.new("Iron Dagger", "EitherHand", {
 		weight = 0
     }
 })
+EquipmentDatabase["shortsword_iron"] = Equipment.new("Iron Shortsword", "EitherHand", {
+	level = 10,
+	description = "",
+	attackType = "Melee",
+
+	modifiers = {
+        accuracy = { Stab = 14, Slash = 10, Crush = -2, Magic = 0, Ranged = 0 },
+        defense = { Stab = 0, Slash = 2, Crush = 1, Magic = 0, Ranged = 0 },
+		bonus = { Melee = 12, Magic = 0, Ranged = 0 },
+		attackSpeed = 0, -- "Medium"
+		criticalChance = 0,
+		weight = 0
+    }
+})
+
 
 -- Iron Armor
 
