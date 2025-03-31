@@ -185,8 +185,6 @@ local function main()
         return
     end
 
-    os.setComputerLabel("Apothis Client v" .. getVersion())
-
     local isInitiatedApothis = apothisAPI.init(apothisServer, modemSide, log)
 
     if isInitiatedApothis == false then
@@ -194,6 +192,7 @@ local function main()
         return
     end
 
+    os.setComputerLabel("[Name] - AC v" .. getVersion())
     print("Client initialized successfully")
 end
 
