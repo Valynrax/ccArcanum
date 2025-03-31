@@ -189,7 +189,7 @@ local function main()
     end
 
     os.setComputerLabel("[Name] - AC v" .. getVersion())
-    print("Client initialized successfully")
+    print("Client Initialized successfully")
 end
 
 main()

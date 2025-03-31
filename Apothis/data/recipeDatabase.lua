@@ -60,6 +60,10 @@ RecipeDatabase["shortsword_bronze"] = Recipe.new("Smith Bronze Shortsword", 2, "
 	["ingot_bronze"] = 1
 })
 
+RecipeDatabase["claws_bronze"] = Recipe.new("Smith Bronze Claws", 3, "smithing", 17.5, {
+	["ingot_bronze"] = 2
+})
+
 RecipeDatabase["scimitar_bronze"] = Recipe.new("Smith Bronze Scimitar", 4, "smithing", 25, {
 	["ingot_bronze"] = 2
 })
@@ -91,6 +95,7 @@ RecipeDatabase["greatsword_bronze"] = Recipe.new("Smith Bronze Greatsword", 9, "
 RecipeDatabase["maul_bronze"] = Recipe.new("Smith Bronze Maul", 9, "smithing", 50, {
 	["ingot_bronze"] = 4
 })
+
 ----------------------------------------------------------------------------------
 
 -- Smithing, Armor, Bronze

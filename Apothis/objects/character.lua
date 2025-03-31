@@ -12,9 +12,13 @@ function Character.new()
 
     -- Core Stats
     self.health = 100
-    self.maxHealth = 100
+    self.maxHealth = self:getMaxHealth()
     self.position = { x = 0, y = 0, z = 0 }
     self.stats = {}
+
+    function self:getMaxHealth()
+        return self.skills["health"].level
+    end
     
     -- Inventory
     self.inventory = {}
@@ -164,7 +168,7 @@ function Character.new()
             xp = 0.0
         },
         ["health"] = {
-            level = 1,
+            level = 10,
             xp = 0.0
         },
         ["mining"] = {
