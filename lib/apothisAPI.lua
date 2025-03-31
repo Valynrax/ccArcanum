@@ -69,6 +69,14 @@ local function waitResponse(connection, timeout)
     return response
 end
 
+local function saveToken(token)
+    local tokenFile = fs.open(".token", "w")
+    if tokenFile then
+        tokenFile.write(token)
+        tokenFile.close()
+    end
+end
+
 local function readToken()
     if not fs.exists(".token") then
         log("Token not found")
@@ -106,23 +114,30 @@ local function ensureOnGround()
     end
 end
 
+local function handleLogin(username, password)
+    local success, _, token = arcanumAPI.login(username, password)
+    if success then saveToken(token) end
+end
+
 function apothisAPI.Command(cmd)
-    local connection = createConnection()
+    local connection = connectToApothis()
     if connection == nil then
         return false, "Cannot connect to Apothis Server"
     end
 
-    if cmd == "login" then
-        write("Username: ") local username = read()
-        write("Password: ") local password = read("*")
+    local username = nil
+    local password = nil
 
-        local success, user, token = arcanumAPI.login(username, password)
+    if cmd == "register" or cmd == "login" then
+        write("Username: ") username = read()
+        write("Password: ") password = read("*")
+    end
 
-        if success then
-            local tokenFile = fs.open(".token", "w")
-            tokenFile.write(token)
-            tokenFile.close()
-        end
+    if cmd == "register" then
+        local success, message = arcanumAPI.register(username, password)
+        if success == true then handleLogin(username, password) end
+    elseif cmd == "login" then
+        handleLogin(username, password)
     end
     
     local token = readToken()
