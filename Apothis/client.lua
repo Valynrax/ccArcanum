@@ -197,4 +197,5 @@ local function main()
     print("Client initialized successfully")
 end
 
-parallel.waitForAny(main, listenForCommands, listenForMessages, handleUserInput)
+main()
+parallel.waitForAny(listenForCommands, listenForMessages, handleUserInput)
