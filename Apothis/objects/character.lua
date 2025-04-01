@@ -220,7 +220,7 @@ function Character.new()
 
     -- Heal Character
     function self:heal()
-        self.health = self.maxHealth
+        self.health = math.min(self.maxHealth, self.health + 1)
     end
 
     -- Take Damage

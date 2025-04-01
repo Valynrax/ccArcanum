@@ -487,8 +487,138 @@ EquipmentDatabase["claws_iron"] = Equipment.new("Iron Claws", "Two-Handed", {
     }
 })
 
-
 -- Iron Armor
+EquipmentDatabase["helmet_iron"] = Equipment.new("Iron Helmet", "Head", {
+	level = 10,
+	description = "",
+
+	modifiers = {
+        accuracy = { Stab = 0, Slash = 0, Crush = 0, Magic = -3, Ranged = 0 },
+		defense = { Stab = 9, Slash = 10, Crush = 8, Magic = -1, Ranged = 9 },
+		bonus = { Melee = 0, Magic = 0, Ranged = 0 },
+		attackSpeed = 0,
+		criticalChance = 0,
+		weight = 0
+    }
+})
+EquipmentDatabase["chainbody_iron"] = Equipment.new("Iron Chainbody", "Chest", {
+	level = 10,
+	description = "",
+
+	modifiers = {
+        accuracy = { Stab = 0, Slash = 0, Crush = 0, Magic = -15, Ranged = 0 },
+		defense = { Stab = 22, Slash = 32, Crush = 39, Magic = -3, Ranged = 24 },
+		bonus = { Melee = 0, Magic = 0, Ranged = 0 },
+		attackSpeed = 0,
+		criticalChance = 0,
+		weight = 0
+    }
+})
+EquipmentDatabase["r_chausses_iron"] = Equipment.new("Iron Reinforced Chausses", "Legs", {
+	level = 10,
+	description = "",
+
+	modifiers = {
+        accuracy = { Stab = 0, Slash = 0, Crush = 0, Magic = -21, Ranged = -11 },
+		defense = { Stab = 19, Slash = 28, Crush = 8, Magic = -4, Ranged = 18 },
+		bonus = { Melee = 0, Magic = 0, Ranged = 0 },
+		attackSpeed = 0,
+		criticalChance = 0,
+		weight = 0
+    }
+})
+EquipmentDatabase["r_gloves_iron"] = Equipment.new("Iron Reinforced Gloves", "Hands", {
+	level = 10,
+	description = "",
+
+	modifiers = {
+        accuracy = { Stab = 5, Slash = 5, Crush = 5, Magic = 3, Ranged = 5 },
+		defense = { Stab = 5, Slash = 5, Crush = 5, Magic = 3, Ranged = 5 },
+		bonus = { Melee = 5, Magic = 0, Ranged = 0 },
+		attackSpeed = 0,
+		criticalChance = 0,
+		weight = 0
+    }
+})
+EquipmentDatabase["r_boots_iron"] = Equipment.new("Iron Reinforced Boots", "Feet", {
+	level = 10,
+	description = "",
+
+	modifiers = {
+        accuracy = { Stab = 0, Slash = 0, Crush = 0, Magic = -3, Ranged = -1 },
+		defense = { Stab = 7, Slash = 8, Crush = 9, Magic = 0, Ranged = 0 },
+		bonus = { Melee = 0, Magic = 0, Ranged = 0 },
+		attackSpeed = 0,
+		criticalChance = 0,
+		weight = 0
+    }
+})
+
+EquipmentDatabase["plate_helmet_iron"] = Equipment.new("Iron Plate Helmet", "Head", {
+	level = 15,
+	description = "",
+
+	modifiers = {
+        accuracy = { Stab = 0, Slash = 0, Crush = 0, Magic = -6, Ranged = -3 },
+		defense = { Stab = 12, Slash = 13, Crush = 10, Magic = -1, Ranged = 9 },
+		bonus = { Melee = 0, Magic = 0, Ranged = 0 },
+		attackSpeed = 0,
+		criticalChance = 0,
+		weight = 0
+    }
+})
+EquipmentDatabase["chestplate_iron"] = Equipment.new("Iron Chestplate", "Chest", {
+	level = 15,
+	description = "",
+
+	modifiers = {
+        accuracy = { Stab = 0, Slash = 0, Crush = 0, Magic = -30, Ranged = -15 },
+		defense = { Stab = 41, Slash = 40, Crush = 30, Magic = -6, Ranged = 40 },
+		bonus = { Melee = 0, Magic = 0, Ranged = 0 },
+		attackSpeed = 0,
+		criticalChance = 0,
+		weight = 0
+    }
+})
+EquipmentDatabase["p_chausses_iron"] = Equipment.new("Iron Plate Chausses", "Legs", {
+	level = 15,
+	description = "",
+
+	modifiers = {
+        accuracy = { Stab = 0, Slash = 0, Crush = 0, Magic = -21, Ranged = -11 },
+		defense = { Stab = 21, Slash = 20, Crush = 10, Magic = -4, Ranged = 20 },
+		bonus = { Melee = 0, Magic = 0, Ranged = 0 },
+		attackSpeed = 0,
+		criticalChance = 0,
+		weight = 0
+    }
+})
+EquipmentDatabase["gauntlets_iron"] = Equipment.new("Iron Gauntlets", "Hands", {
+	level = 15,
+	description = "",
+
+	modifiers = {
+        accuracy = { Stab = 5, Slash = 5, Crush = 5, Magic = 3, Ranged = 5 },
+		defense = { Stab = 7, Slash = 7, Crush = 7, Magic = 3, Ranged = 7 },
+		bonus = { Melee = 6, Magic = 0, Ranged = 0 },
+		attackSpeed = 0,
+		criticalChance = 0,
+		weight = 0
+    }
+})
+EquipmentDatabase["p_greaves_iron"] = Equipment.new("Iron Plate Greaves", "Feet", {
+	level = 15,
+	description = "",
+
+	modifiers = {
+        accuracy = { Stab = 0, Slash = 0, Crush = 0, Magic = -3, Ranged = -1 },
+		defense = { Stab = 9, Slash = 10, Crush = 11, Magic = 0, Ranged = 0 },
+		bonus = { Melee = 0, Magic = 0, Ranged = 0 },
+		attackSpeed = 0,
+		criticalChance = 0,
+		weight = 0
+    }
+})
 
 -- Steel Weapons
 -- Steel Armor

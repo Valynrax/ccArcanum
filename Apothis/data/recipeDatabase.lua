@@ -99,23 +99,23 @@ RecipeDatabase["maul_bronze"] = Recipe.new("Smith Bronze Maul", 9, "smithing", 5
 ----------------------------------------------------------------------------------
 
 -- Smithing, Armor, Bronze
-RecipeDatabase["helmet_bronze"] = Recipe.new("Smith Bronze Helmet", 2, "smithing", 0, {
+RecipeDatabase["helmet_bronze"] = Recipe.new("Smith Bronze Helmet", 1, "smithing", 0, {
 	["ingot_bronze"] = 1
 })
 
-RecipeDatabase["chainbody_bronze"] = Recipe.new("Smith Bronze Chainbody", 2, "smithing", 0, {
+RecipeDatabase["chainbody_bronze"] = Recipe.new("Smith Bronze Chainbody", 1, "smithing", 0, {
 	["ingot_bronze"] = 3
 })
 
-RecipeDatabase["r_chausses_bronze"] = Recipe.new("Smith Bronze Reinforced Chausses", 2, "smithing", 0, {
+RecipeDatabase["r_chausses_bronze"] = Recipe.new("Smith Bronze Reinforced Chausses", 1, "smithing", 0, {
 	["ingot_bronze"] = 2
 })
 
-RecipeDatabase["r_gloves_bronze"] = Recipe.new("Smith Bronze Reinforced Gloves", 2, "smithing", 0, {
+RecipeDatabase["r_gloves_bronze"] = Recipe.new("Smith Bronze Reinforced Gloves", 1, "smithing", 0, {
 	["ingot_bronze"] = 1
 })
 
-RecipeDatabase["r_boots_bronze"] = Recipe.new("Smith Bronze Reinforced Boots", 2, "smithing", 0, {
+RecipeDatabase["r_boots_bronze"] = Recipe.new("Smith Bronze Reinforced Boots", 1, "smithing", 0, {
 	["ingot_bronze"] = 1
 })
 
@@ -141,174 +141,268 @@ RecipeDatabase["p_greaves_bronze"] = Recipe.new("Smith Bronze Plate Greaves", 5,
 ------------------------------------------------------------------------------------
 
 -- Smithing, Weapons, Iron
-RecipeDatabase[""] = Recipe.new("", 0, "smithing", 0, {
-	[""] = 0
+RecipeDatabase["dagger_iron"] = Recipe.new("Smith Iron Dagger", 11, "smithing", 25, {
+	["ingot_iron"] = 1
 })
 
+RecipeDatabase["shortsword_iron"] = Recipe.new("Smith Iron Shortsword", 12, "smithing", 25, {
+	["ingot_iron"] = 1
+})
+
+RecipeDatabase["claws_iron"] = Recipe.new("Smith Iron Claws", 13, "smithing", 50, {
+	["ingot_iron"] = 2
+})
+
+RecipeDatabase["scimitar_iron"] = Recipe.new("Smith Iron Scimitar", 14, "smithing", 50, {
+	["ingot_iron"] = 2
+})
+
+RecipeDatabase["mace_iron"] = Recipe.new("Smith Iron Mace", 15, "smithing", 25, {
+	["ingot_iron"] = 1
+})
+
+RecipeDatabase["warhammer_iron"] = Recipe.new("Smith Iron Warhammer", 16, "smithing", 75, {
+	["ingot_iron"] = 3
+})
+
+RecipeDatabase["rapier_iron"] = Recipe.new("Smith Iron Rapier", 16, "smithing", 25, {
+	["ingot_iron"] = 1
+})
+
+RecipeDatabase["battleaxe_iron"] = Recipe.new("Smith Iron Battleaxe", 18, "smithing", 75, {
+	["ingot_iron"] = 3
+})
+
+RecipeDatabase["longsword_iron"] = Recipe.new("Smith Iron Longsword", 18, "smithing", 50, {
+	["ingot_iron"] = 2
+})
+
+RecipeDatabase["greatsword_iron"] = Recipe.new("Smith Iron Greatsword", 19, "smithing", 100, {
+	["ingot_iron"] = 4
+})
+
+RecipeDatabase["maul_iron"] = Recipe.new("Smith Iron Maul", 19, "smithing", 100, {
+	["ingot_iron"] = 4
+})
+---------------------------------------------------------------------------------------------
+
 -- Smithing, Armor, Iron
+RecipeDatabase["helmet_iron"] = Recipe.new("Smith Iron Helmet", 10, "smithing", 25, {
+	["ingot_iron"] = 1
+})
+
+RecipeDatabase["chainbody_iron"] = Recipe.new("Smith Iron Chainbody", 10, "smithing", 75, {
+	["ingot_iron"] = 3
+})
+
+RecipeDatabase["r_chausses_iron"] = Recipe.new("Smith Iron Reinforced Chausses", 10, "smithing", 50, {
+	["ingot_iron"] = 2
+})
+
+RecipeDatabase["r_gloves_iron"] = Recipe.new("Smith Iron Reinforced Gloves", 10, "smithing", 25, {
+	["ingot_iron"] = 1
+})
+
+RecipeDatabase["r_boots_iron"] = Recipe.new("Smith Iron Reinforced Boots", 10, "smithing", 25, {
+	["ingot_iron"] = 1
+})
+
+RecipeDatabase["plate_helmet_iron"] = Recipe.new("Smith Iron Plate Helm", 15, "smithing", 50, {
+	["ingot_iron"] = 2
+})
+
+RecipeDatabase["chestplate_iron"] = Recipe.new("Smith Iron Chestplate", 15, "smithing", 150, {
+	["ingot_iron"] = 6
+})
+
+RecipeDatabase["p_chausses_iron"] = Recipe.new("Smith Iron Plate Chausses", 15, "smithing", 100, {
+	["ingot_iron"] = 4
+})
+
+RecipeDatabase["gauntlets_iron"] = Recipe.new("Smith Iron Gauntlets", 15, "smithing", 50, {
+	["ingot_iron"] = 2
+})
+
+RecipeDatabase["p_greaves_iron"] = Recipe.new("Smith Iron Plate Greaves", 15, "smithing", 50, {
+	["ingot_iron"] = 2
+})
+---------------------------------------------------------------------------------------------
+
 -- Smithing, Weapons, Steel
+---------------------------------------------------------------------------------------------
 -- Smithing, Armor, Steel
+---------------------------------------------------------------------------------------------
 -- Smithing, Weapons, Blue Steel
+---------------------------------------------------------------------------------------------
 -- Smithing, Armor, Blue Steel
+---------------------------------------------------------------------------------------------
 -- Smithing, Weapons, Red Steel
+---------------------------------------------------------------------------------------------
 -- Smithing, Armor, Red Steel
+---------------------------------------------------------------------------------------------
 -- Smithing, Weapons, Eldrinite
+---------------------------------------------------------------------------------------------
 -- Smithing, Armor, Eldrinite
+---------------------------------------------------------------------------------------------
 -- Smithing, Weapons, Verdantite
+---------------------------------------------------------------------------------------------
 -- Smithing, Armor, Verdantite
+---------------------------------------------------------------------------------------------
 -- Smithing, Weapons, Celestium
+---------------------------------------------------------------------------------------------
 -- Smithing, Armor, Celestium
+---------------------------------------------------------------------------------------------
 
 -- Thaumaturgy, Pale/Oak Weapons
-RecipeDatabase["wand_pale"] = Recipe.new("Embue Pale Wand", 1, "thaumaturgy", 6, {
+RecipeDatabase["wand_pale"] = Recipe.new("Embue Pale Wand", 1, "thaumaturgy", 12.5, {
 	["inert_wand_oak"] = 1,
 	["pale_energy"] = 20
 })
 
-RecipeDatabase["core_pale"] = Recipe.new("Embue Pale Core", 1, "thaumaturgy", 6, {
+RecipeDatabase["core_pale"] = Recipe.new("Embue Pale Core", 1, "thaumaturgy", 12.5, {
 	["inert_core_oak"] = 1,
 	["pale_energy"] = 20
 })
 
-RecipeDatabase["staff_pale"] = Recipe.new("Embue Pale Staff", 1, "thaumaturgy", 11, {
+RecipeDatabase["staff_pale"] = Recipe.new("Embue Pale Staff", 1, "thaumaturgy", 25, {
 	["inert_staff_oak"] = 1,
 	["pale_energy"] = 40
 })
 --------------------------------
 
 -- Thaumaturgy, Flickering/Birch Weapons
-RecipeDatabase["wand_flickering"] = Recipe.new("Embue Flickering Wand", 10, "thaumaturgy", 9, {
+RecipeDatabase["wand_flickering"] = Recipe.new("Embue Flickering Wand", 10, "thaumaturgy", 25, {
 	["inert_wand_birch"] = 1,
 	["flickering_energy"] = 25
 })
 
-RecipeDatabase["core_flickering"] = Recipe.new("Embue Flickering Core", 10, "thaumaturgy", 9, {
+RecipeDatabase["core_flickering"] = Recipe.new("Embue Flickering Core", 10, "thaumaturgy", 25, {
 	["inert_core_birch"] = 1,
 	["flickering_energy"] = 25
 })
 
-RecipeDatabase["staff_flickering"] = Recipe.new("Embue Flickering Staff", 10, "thaumaturgy", 17, {
+RecipeDatabase["staff_flickering"] = Recipe.new("Embue Flickering Staff", 10, "thaumaturgy", 50, {
 	["inert_staff_birch"] = 1,
 	["flickering_energy"] = 50
 })
 -------------------------------------
 
 -- Thaumaturgy, Bright/Spruce Weapons
-RecipeDatabase["wand_bright"] = Recipe.new("Embue Bright Wand", 20, "thaumaturgy", 13, {
+RecipeDatabase["wand_bright"] = Recipe.new("Embue Bright Wand", 20, "thaumaturgy", 37.5, {
 	["inert_wand_spruce"] = 1,
 	["bright_energy"] = 30
 })
 
-RecipeDatabase["core_bright"] = Recipe.new("Embue Bright Core", 20, "thaumaturgy", 13, {
+RecipeDatabase["core_bright"] = Recipe.new("Embue Bright Core", 20, "thaumaturgy", 37.5, {
 	["inert_core_spruce"] = 1,
 	["bright_energy"] = 30
 })
 
-RecipeDatabase["staff_bright"] = Recipe.new("Embue Bright Staff", 20, "thaumaturgy", 24, {
+RecipeDatabase["staff_bright"] = Recipe.new("Embue Bright Staff", 20, "thaumaturgy", 75, {
 	["inert_staff_spruce"] = 1,
 	["bright_energy"] = 60
 })
 ------------------------------------
 
 -- Thaumaturgy, Glowing/Jungle Weapons
-RecipeDatabase["wand_glowing"] = Recipe.new("Embue Glowing Wand", 30, "thaumaturgy", 0, {
+RecipeDatabase["wand_glowing"] = Recipe.new("Embue Glowing Wand", 30, "thaumaturgy", 50, {
 	["inert_wand_jungle"] = 1,
 	["glowing_energy"] = 35
 })
 
-RecipeDatabase["core_glowing"] = Recipe.new("Embue Glowing Core", 30, "thaumaturgy", 0, {
+RecipeDatabase["core_glowing"] = Recipe.new("Embue Glowing Core", 30, "thaumaturgy", 50, {
 	["inert_core_jungle"] = 1,
 	["glowing_energy"] = 35
 })
 
-RecipeDatabase["staff_glowing"] = Recipe.new("Embue Glowing Staff", 30, "thaumaturgy", 0, {
+RecipeDatabase["staff_glowing"] = Recipe.new("Embue Glowing Staff", 30, "thaumaturgy", 100, {
 	["inert_staff_jungle"] = 1,
 	["glowing_energy"] = 70
 })
 --------------------------------
 
 -- Thaumaturgy, Sparkling/Acacia Weapons
-RecipeDatabase["wand_sparkling"] = Recipe.new("Embue Sparkiling Wand", 40, "thaumaturgy", 0, {
+RecipeDatabase["wand_sparkling"] = Recipe.new("Embue Sparkiling Wand", 40, "thaumaturgy", 62.5, {
 	["inert_wand_acacia"] = 1,
 	["sparkling_energy"] = 40
 })
-RecipeDatabase["core_sparkling"] = Recipe.new("Embue Sparkling Core", 40, "thaumaturgy", 0, {
+RecipeDatabase["core_sparkling"] = Recipe.new("Embue Sparkling Core", 40, "thaumaturgy", 62.5, {
 	["inert_core_acacia"] = 1,
 	["sparkling_energy"] = 40
 })
-RecipeDatabase["staff_sparkling"] = Recipe.new("Embue Sparkling Staff", 40, "thaumaturgy", 0, {
+RecipeDatabase["staff_sparkling"] = Recipe.new("Embue Sparkling Staff", 40, "thaumaturgy", 125, {
 	["inert_staff_acacia"] = 1,
 	["sparkling_energy"] = 80
 })
 --------------------------------
 
 -- Thaumaturgy, Gleaming/Dark Oak Weapons
-RecipeDatabase["wand_gleaming"] = Recipe.new("Embue Gleaming Wand", 50, "thaumaturgy", 0, {
+RecipeDatabase["wand_gleaming"] = Recipe.new("Embue Gleaming Wand", 50, "thaumaturgy", 75, {
 	["inert_wand_dark_oak"] = 1,
 	["gleaming_energy"] = 45
 })
-RecipeDatabase["core_gleaming"] = Recipe.new("Embue Gleaming Core", 50, "thaumaturgy", 0, {
+RecipeDatabase["core_gleaming"] = Recipe.new("Embue Gleaming Core", 50, "thaumaturgy", 75, {
 	["inert_core_dark_oak"] = 1,
 	["gleaming_energy"] = 45
 })
-RecipeDatabase["staff_gleaming"] = Recipe.new("Embue Gleaming Staff", 50, "thaumaturgy", 0, {
+RecipeDatabase["staff_gleaming"] = Recipe.new("Embue Gleaming Staff", 50, "thaumaturgy", 150, {
 	["inert_staff_dark_oak"] = 1,
 	["gleaming_energy"] = 90
 })
 ----------------------------------
 
 -- Thaumaturgy, Vibrant/Mangrove Weapons
-RecipeDatabase["wand_vibrant"] = Recipe.new("Embue Vibrant Wand", 60, "thaumaturgy", 0, {
+RecipeDatabase["wand_vibrant"] = Recipe.new("Embue Vibrant Wand", 60, "thaumaturgy", 87.5, {
 	["inert_wand_mangrove"] = 1,
 	["vibrant_energy"] = 50
 })
-RecipeDatabase["core_vibrant"] = Recipe.new("Embue Vibrant Core", 60, "thaumaturgy", 0, {
+RecipeDatabase["core_vibrant"] = Recipe.new("Embue Vibrant Core", 60, "thaumaturgy", 87.5, {
 	["inert_core_mangrove"] = 1,
 	["vibrant_energy"] = 50
 })
-RecipeDatabase["staff_vibrant"] = Recipe.new("Embue Vibrant Staff", 60, "thaumaturgy", 0, {
+RecipeDatabase["staff_vibrant"] = Recipe.new("Embue Vibrant Staff", 60, "thaumaturgy", 175, {
 	["inert_staff_mangrove"] = 1,
 	["vibrant_energy"] = 100
 })
 ----------------------------------
 
 -- Thaumaturgy, Lustrous/Crimson Stem Weapons
-RecipeDatabase["wand_lustrous"] = Recipe.new("Embue Lustrous Wand", 70, "thaumaturgy", 0, {
+RecipeDatabase["wand_lustrous"] = Recipe.new("Embue Lustrous Wand", 70, "thaumaturgy", 100, {
 	["inert_wand_crimson"] = 1,
 	["lustrous_energy"] = 55
 })
-RecipeDatabase["core_lustrous"] = Recipe.new("Embue Lustrous Core", 70, "thaumaturgy", 0, {
+RecipeDatabase["core_lustrous"] = Recipe.new("Embue Lustrous Core", 70, "thaumaturgy", 100, {
 	["inert_core_crimson"] = 1,
 	["lustrous_energy"] = 55
 })
-RecipeDatabase["staff_lustrous"] = Recipe.new("Embue Lustrous Staff", 70, "thaumaturgy", 0, {
+RecipeDatabase["staff_lustrous"] = Recipe.new("Embue Lustrous Staff", 70, "thaumaturgy", 200, {
 	["inert_staff_crimson"] = 1,
 	["lustrous_energy"] = 110
 })
 --------------------------------------
 
 -- Thaumaturgy, Brilliant/Warped Steam Weapons
-RecipeDatabase["wand_brilliant"] = Recipe.new("Embue Brilliant Wand", 80, "thaumaturgy", 0, {
+RecipeDatabase["wand_brilliant"] = Recipe.new("Embue Brilliant Wand", 80, "thaumaturgy", 112.5, {
 	["inert_wand_warped"] = 1,
 	["brilliant_energy"] = 60
 })
-RecipeDatabase["core_brilliant"] = Recipe.new("Embue Brilliant Core", 80, "thaumaturgy", 0, {
+RecipeDatabase["core_brilliant"] = Recipe.new("Embue Brilliant Core", 80, "thaumaturgy", 112.5, {
 	["inert_core_warped"] = 1,
 	["brilliant_energy"] = 60
 })
-RecipeDatabase["staff_brilliant"] = Recipe.new("Embue Brilliant Staff", 80, "thaumaturgy", 0, {
+RecipeDatabase["staff_brilliant"] = Recipe.new("Embue Brilliant Staff", 80, "thaumaturgy", 225, {
 	["inert_staff_warped"] = 1,
 	["brilliant_energy"] = 120
 })
 --------------------------------------
 
 -- Thaumaturgy, Ingots
-RecipeDatabase["ingot_verdantite"] = Recipe.new("Embue Verdantite Ingot", 60, "thaumaturgy", 0, {
+RecipeDatabase["ingot_verdantite"] = Recipe.new("Embue Verdantite Ingot", 60, "thaumaturgy", 75, {
 	["ingot_verdantite_inert"] = 1,
 	["vibrant_energy"] = 100
 })
 
-RecipeDatabase["ingot_celestium"] = Recipe.new("Embue Celestium Ingot", 70, "thaumaturgy", 0, {
+RecipeDatabase["ingot_celestium"] = Recipe.new("Embue Celestium Ingot", 70, "thaumaturgy", 87.5, {
 	["ingot_celestium_inert"] = 1,
 	["lustrous_energy"] = 100
 })
@@ -317,77 +411,77 @@ RecipeDatabase["ingot_celestium"] = Recipe.new("Embue Celestium Ingot", 70, "tha
 -- Fletching, Other
 -- TODO: Figure out how to handle creating arrowshafts from the other woods
 RecipeDatabase["arrowshaft"] = {
-	["wood_oak"] = Recipe.new("Carve Arrow Shafts from Oak", 1, "fletching", 3, { ["wood_oak"] = 1 }, 5),
-	["wood_birch"] = Recipe.new("Carve Arrow Shafts from Brich", 10, "fletching", 9, { ["wood_birch"] = 1 }, 10),
-	["wood_spruce"] = Recipe.new("Carve Arrow Shafts from Spruce", 20, "fletching", 14, { ["wood_spruce"] = 1 }, 15),
-	["wood_jungle"] = Recipe.new("Carve Arrow Shafts from Jungle", 30, "fletching", 27, { ["wood_jungle"] = 1 }, 20),
-	["wood_acacia"] = Recipe.new("Carve Arrow Shafts from Acacia", 40, "fletching", 35, { ["wood_acacia"] = 1 }, 25),
-	["wood_dark_oak"] = Recipe.new("Carve Arrow Shafts from Dark Oak", 50, "fletching", 0, { ["wood_dark_oak"] = 1 }, 30),
-	["wood_mangrove"] = Recipe.new("Carve Arrow Shafts from Mangrove", 60, "fletching", 0, { ["wood_mangrove"] = 1 }, 35),
-	["wood_crimson"] = Recipe.new("Carve Arrow Shafts from Crimson Stem", 70, "fletching", 0, { ["wood_crimson"] = 1 }, 40),
-	["wood_warped"] = Recipe.new("Carve Arrow Shafts from Warped Stem", 80, "fletching", 0, { ["wood_warped"] = 1 }, 45)
+	["wood_oak"]		= Recipe.new("Carve Arrow Shafts from Oak", 1, "fletching", 3, { ["wood_oak"] = 1 }, 5),
+	["wood_birch"]		= Recipe.new("Carve Arrow Shafts from Brich", 10, "fletching", 9, { ["wood_birch"] = 1 }, 10),
+	["wood_spruce"]		= Recipe.new("Carve Arrow Shafts from Spruce", 20, "fletching", 14, { ["wood_spruce"] = 1 }, 15),
+	["wood_jungle"]		= Recipe.new("Carve Arrow Shafts from Jungle", 30, "fletching", 27, { ["wood_jungle"] = 1 }, 20),
+	["wood_acacia"]		= Recipe.new("Carve Arrow Shafts from Acacia", 40, "fletching", 35, { ["wood_acacia"] = 1 }, 25),
+	["wood_dark_oak"]	= Recipe.new("Carve Arrow Shafts from Dark Oak", 50, "fletching", 0, { ["wood_dark_oak"] = 1 }, 30),
+	["wood_mangrove"]	= Recipe.new("Carve Arrow Shafts from Mangrove", 60, "fletching", 0, { ["wood_mangrove"] = 1 }, 35),
+	["wood_crimson"]	= Recipe.new("Carve Arrow Shafts from Crimson Stem", 70, "fletching", 0, { ["wood_crimson"] = 1 }, 40),
+	["wood_warped"]		= Recipe.new("Carve Arrow Shafts from Warped Stem", 80, "fletching", 0, { ["wood_warped"] = 1 }, 45)
 }
 
 -------------------
 
 -- Fletching, Wood to Inert Magical Weapons
-RecipeDatabase["inert_wand_oak"] = Recipe.new("Carve Inert Oak Wand", 1, "fletching", 10, {
+RecipeDatabase["inert_wand_oak"] = Recipe.new("Carve Inert Oak Wand", 1, "fletching", 5, {
 	["wood_oak"] = 1
 })
 
-RecipeDatabase["inert_core_oak"] = Recipe.new("Carve Inert Oak Core", 1, "fletching", 10, {
+RecipeDatabase["inert_core_oak"] = Recipe.new("Carve Inert Oak Core", 1, "fletching", 5, {
 	["wood_oak"] = 1
 })
 
-RecipeDatabase["inert_staff_oak"] = Recipe.new("Carve Inert Oak Staff", 1, "fletching", 20, {
+RecipeDatabase["inert_staff_oak"] = Recipe.new("Carve Inert Oak Staff", 1, "fletching", 15, {
 	["wood_oak"] = 3
 })
 
-RecipeDatabase["inert_wand_birch"] = Recipe.new("Carve Inert Birch Wand", 10, "fletching", 20, {
+RecipeDatabase["inert_wand_birch"] = Recipe.new("Carve Inert Birch Wand", 10, "fletching", 10, {
 	["wood_birch"] = 1
 })
 
-RecipeDatabase["inert_core_birch"] = Recipe.new("Carve Inert Birch Core", 10, "fletching", 20, {
+RecipeDatabase["inert_core_birch"] = Recipe.new("Carve Inert Birch Core", 10, "fletching", 10, {
 	["wood_birch"] = 1
 })
 
-RecipeDatabase["inert_staff_birch"] = Recipe.new("Carve Inert Birch Staff", 10, "fletching", 50, {
+RecipeDatabase["inert_staff_birch"] = Recipe.new("Carve Inert Birch Staff", 10, "fletching", 30, {
 	["wood_birch"] = 3
 })
 
-RecipeDatabase["inert_wand_spruce"] = Recipe.new("Carve Inert Spruce Wand", 20, "fletching", 33, {
+RecipeDatabase["inert_wand_spruce"] = Recipe.new("Carve Inert Spruce Wand", 20, "fletching", 16.5, {
 	["wood_spruce"] = 1
 })
 
-RecipeDatabase["inert_core_spruce"] = Recipe.new("Carve Inert Spruce Core", 20, "fletching", 33, {
+RecipeDatabase["inert_core_spruce"] = Recipe.new("Carve Inert Spruce Core", 20, "fletching", 16.5, {
 	["wood_spruce"] = 1
 })
 
-RecipeDatabase["inert_staff_spruce"] = Recipe.new("Carve Inert Spruce Staff", 20, "fletching", 85, {
+RecipeDatabase["inert_staff_spruce"] = Recipe.new("Carve Inert Spruce Staff", 20, "fletching", 49.5, {
 	["wood_spruce"] = 3
 })
 
-RecipeDatabase["inert_wand_jungle"] = Recipe.new("Carve Inert Jungle Wand", 30, "fletching", 90, {
+RecipeDatabase["inert_wand_jungle"] = Recipe.new("Carve Inert Jungle Wand", 30, "fletching", 33.3, {
 	["wood_jungle"] = 1
 })
 
-RecipeDatabase["inert_core_jungle"] = Recipe.new("Carve Inert Jungle Core", 30, "fletching", 90, {
+RecipeDatabase["inert_core_jungle"] = Recipe.new("Carve Inert Jungle Core", 30, "fletching", 33.3, {
 	["wood_jungle"] = 1
 })
 
-RecipeDatabase["inert_staff_jungle"] = Recipe.new("Carve Inert Jungle Staff", 30, "fletching", 250, {
+RecipeDatabase["inert_staff_jungle"] = Recipe.new("Carve Inert Jungle Staff", 30, "fletching", 99.9, {
 	["wood_jungle"] = 3
 })
 
-RecipeDatabase["inert_wand_acacia"] = Recipe.new("Carve Inert Acacia Wand", 40, "fletching", 0, {
+RecipeDatabase["inert_wand_acacia"] = Recipe.new("Carve Inert Acacia Wand", 40, "fletching", 41.5, {
 	["wood_acacia"] = 1
 })
 
-RecipeDatabase["inert_core_acacia"] = Recipe.new("Carve Inert Acacia Core", 40, "fletching", 0, {
+RecipeDatabase["inert_core_acacia"] = Recipe.new("Carve Inert Acacia Core", 40, "fletching", 41.5, {
 	["wood_acacia"] = 1
 })
 
-RecipeDatabase["inert_staff_acacia"] = Recipe.new("Carve Inert Acacia Staff", 40, "fletching", 0, {
+RecipeDatabase["inert_staff_acacia"] = Recipe.new("Carve Inert Acacia Staff", 40, "fletching", 124.5, {
 	["wood_acacia"] = 3
 })
 
@@ -442,30 +536,35 @@ RecipeDatabase["inert_staff_warped"] = Recipe.new("Carve Inert Warped Staff", 80
 -------------------------------------------
 
 -- Cooking Recipes
-RecipeDatabase["sunblossom_bread"] = Recipe.new("Bake Sunblossom Bread", 1, "cooking", 0, {
+RecipeDatabase["sunblossom_bread"] = Recipe.new("Bake Sunblossom Bread", 1, "cooking", 5, {
 	["sunblossom_wheat"] = 2
 })
 
-RecipeDatabase["shrimp_cooked"] = Recipe.new("Cook Raw Shrimp", 1, "cooking", 0, {
+RecipeDatabase["shrimp_cooked"] = Recipe.new("Cook Raw Shrimp", 1, "cooking", 5, {
 	["shrimp_raw"] = 1
 })
 
-RecipeDatabase["sunblossom_fish_sandwich"] = Recipe.new("Make Sunblossom Shrimp Sandwich", 5, "cooking", 0, {
+RecipeDatabase["cow_cooked"] = Recipe.new("Cook Raw Cow", 1, "cooking", 5, {
+	["cow_raw"] = 1
+})
+
+RecipeDatabase["sunblossom_fish_sandwich"] = Recipe.new("Make Sunblossom Shrimp Sandwich", 5, "cooking", 9.5, {
 	["sunblossom_bread"] = 1,
 	["shrimp_cooked"] = 1
 })
 
-RecipeDatabase["silverleaf_tea"] = Recipe.new("Brew Silverleaf Tea", 10, "cooking", 0, {
-	["silverleaf_mint"] = 1
+RecipeDatabase["silverleaf_tea"] = Recipe.new("Brew Silverleaf Tea", 10, "cooking", 13, {
+	["silverleaf_mint"] = 1,
+	["water_cup"] = 1
 })
 
-RecipeDatabase["glowberry_salad"] = Recipe.new("Make Glowberry Salad", 15, "cooking", 0, {
+RecipeDatabase["glowberry_salad"] = Recipe.new("Make Glowberry Salad", 15, "cooking", 16, {
 	["glowberry"] = 5,
 	["lettuce"] = 2
 })
 
-RecipeDatabase["hearty_meal"] = Recipe.new("Make Hearty Meal", 0, "cooking", 0, {
-	["cow_meat_cooked"] = 1,
+RecipeDatabase["hearty_meal"] = Recipe.new("Make Hearty Meal", 20, "cooking", 18.5, {
+	["cow_cooked"] = 1,
 	["potato"] = 2,
 	["sunblossom_bread"] = 1
 })
