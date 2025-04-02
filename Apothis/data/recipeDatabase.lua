@@ -256,157 +256,226 @@ RecipeDatabase["p_greaves_iron"] = Recipe.new("Smith Iron Plate Greaves", 15, "s
 -- Thaumaturgy, Pale/Oak Weapons
 RecipeDatabase["wand_pale"] = Recipe.new("Embue Pale Wand", 1, "thaumaturgy", 12.5, {
 	["inert_wand_oak"] = 1,
-	["pale_energy"] = 20
+	["energy_pale"] = 20
 })
 
 RecipeDatabase["core_pale"] = Recipe.new("Embue Pale Core", 1, "thaumaturgy", 12.5, {
 	["inert_core_oak"] = 1,
-	["pale_energy"] = 20
+	["energy_pale"] = 20
 })
 
 RecipeDatabase["staff_pale"] = Recipe.new("Embue Pale Staff", 1, "thaumaturgy", 25, {
 	["inert_staff_oak"] = 1,
-	["pale_energy"] = 40
+	["energy_pale"] = 40
 })
 --------------------------------
 
 -- Thaumaturgy, Flickering/Birch Weapons
 RecipeDatabase["wand_flickering"] = Recipe.new("Embue Flickering Wand", 10, "thaumaturgy", 25, {
 	["inert_wand_birch"] = 1,
-	["flickering_energy"] = 25
+	["energy_flickering"] = 25
 })
 
 RecipeDatabase["core_flickering"] = Recipe.new("Embue Flickering Core", 10, "thaumaturgy", 25, {
 	["inert_core_birch"] = 1,
-	["flickering_energy"] = 25
+	["energy_flickering"] = 25
 })
 
 RecipeDatabase["staff_flickering"] = Recipe.new("Embue Flickering Staff", 10, "thaumaturgy", 50, {
 	["inert_staff_birch"] = 1,
-	["flickering_energy"] = 50
+	["energy_flickering"] = 50
 })
 -------------------------------------
 
 -- Thaumaturgy, Bright/Spruce Weapons
 RecipeDatabase["wand_bright"] = Recipe.new("Embue Bright Wand", 20, "thaumaturgy", 37.5, {
 	["inert_wand_spruce"] = 1,
-	["bright_energy"] = 30
+	["energy_bright"] = 30
 })
 
 RecipeDatabase["core_bright"] = Recipe.new("Embue Bright Core", 20, "thaumaturgy", 37.5, {
 	["inert_core_spruce"] = 1,
-	["bright_energy"] = 30
+	["energy_bright"] = 30
 })
 
 RecipeDatabase["staff_bright"] = Recipe.new("Embue Bright Staff", 20, "thaumaturgy", 75, {
 	["inert_staff_spruce"] = 1,
-	["bright_energy"] = 60
+	["energy_bright"] = 60
 })
 ------------------------------------
 
 -- Thaumaturgy, Glowing/Jungle Weapons
 RecipeDatabase["wand_glowing"] = Recipe.new("Embue Glowing Wand", 30, "thaumaturgy", 50, {
 	["inert_wand_jungle"] = 1,
-	["glowing_energy"] = 35
+	["energy_glowing"] = 35
 })
 
 RecipeDatabase["core_glowing"] = Recipe.new("Embue Glowing Core", 30, "thaumaturgy", 50, {
 	["inert_core_jungle"] = 1,
-	["glowing_energy"] = 35
+	["energy_glowing"] = 35
 })
 
 RecipeDatabase["staff_glowing"] = Recipe.new("Embue Glowing Staff", 30, "thaumaturgy", 100, {
 	["inert_staff_jungle"] = 1,
-	["glowing_energy"] = 70
+	["energy_glowing"] = 70
 })
 --------------------------------
 
 -- Thaumaturgy, Sparkling/Acacia Weapons
 RecipeDatabase["wand_sparkling"] = Recipe.new("Embue Sparkiling Wand", 40, "thaumaturgy", 62.5, {
 	["inert_wand_acacia"] = 1,
-	["sparkling_energy"] = 40
+	["energy_sparkling"] = 40
 })
 RecipeDatabase["core_sparkling"] = Recipe.new("Embue Sparkling Core", 40, "thaumaturgy", 62.5, {
 	["inert_core_acacia"] = 1,
-	["sparkling_energy"] = 40
+	["energy_sparkling"] = 40
 })
 RecipeDatabase["staff_sparkling"] = Recipe.new("Embue Sparkling Staff", 40, "thaumaturgy", 125, {
 	["inert_staff_acacia"] = 1,
-	["sparkling_energy"] = 80
+	["energy_sparkling"] = 80
 })
 --------------------------------
 
 -- Thaumaturgy, Gleaming/Dark Oak Weapons
 RecipeDatabase["wand_gleaming"] = Recipe.new("Embue Gleaming Wand", 50, "thaumaturgy", 75, {
 	["inert_wand_dark_oak"] = 1,
-	["gleaming_energy"] = 45
+	["energy_gleaming"] = 45
 })
 RecipeDatabase["core_gleaming"] = Recipe.new("Embue Gleaming Core", 50, "thaumaturgy", 75, {
 	["inert_core_dark_oak"] = 1,
-	["gleaming_energy"] = 45
+	["energy_gleaming"] = 45
 })
 RecipeDatabase["staff_gleaming"] = Recipe.new("Embue Gleaming Staff", 50, "thaumaturgy", 150, {
 	["inert_staff_dark_oak"] = 1,
-	["gleaming_energy"] = 90
+	["energy_gleaming"] = 90
 })
 ----------------------------------
 
 -- Thaumaturgy, Vibrant/Mangrove Weapons
 RecipeDatabase["wand_vibrant"] = Recipe.new("Embue Vibrant Wand", 60, "thaumaturgy", 87.5, {
 	["inert_wand_mangrove"] = 1,
-	["vibrant_energy"] = 50
+	["energy_vibrant"] = 50
 })
 RecipeDatabase["core_vibrant"] = Recipe.new("Embue Vibrant Core", 60, "thaumaturgy", 87.5, {
 	["inert_core_mangrove"] = 1,
-	["vibrant_energy"] = 50
+	["energy_vibrant"] = 50
 })
 RecipeDatabase["staff_vibrant"] = Recipe.new("Embue Vibrant Staff", 60, "thaumaturgy", 175, {
 	["inert_staff_mangrove"] = 1,
-	["vibrant_energy"] = 100
+	["energy_vibrant"] = 100
 })
 ----------------------------------
 
 -- Thaumaturgy, Lustrous/Crimson Stem Weapons
 RecipeDatabase["wand_lustrous"] = Recipe.new("Embue Lustrous Wand", 70, "thaumaturgy", 100, {
 	["inert_wand_crimson"] = 1,
-	["lustrous_energy"] = 55
+	["energy_lustrous"] = 55
 })
 RecipeDatabase["core_lustrous"] = Recipe.new("Embue Lustrous Core", 70, "thaumaturgy", 100, {
 	["inert_core_crimson"] = 1,
-	["lustrous_energy"] = 55
+	["energy_lustrous"] = 55
 })
 RecipeDatabase["staff_lustrous"] = Recipe.new("Embue Lustrous Staff", 70, "thaumaturgy", 200, {
 	["inert_staff_crimson"] = 1,
-	["lustrous_energy"] = 110
+	["energy_lustrous"] = 110
 })
 --------------------------------------
 
 -- Thaumaturgy, Brilliant/Warped Steam Weapons
 RecipeDatabase["wand_brilliant"] = Recipe.new("Embue Brilliant Wand", 80, "thaumaturgy", 112.5, {
 	["inert_wand_warped"] = 1,
-	["brilliant_energy"] = 60
+	["energy_brilliant"] = 60
 })
 RecipeDatabase["core_brilliant"] = Recipe.new("Embue Brilliant Core", 80, "thaumaturgy", 112.5, {
 	["inert_core_warped"] = 1,
-	["brilliant_energy"] = 60
+	["energy_brilliant"] = 60
 })
 RecipeDatabase["staff_brilliant"] = Recipe.new("Embue Brilliant Staff", 80, "thaumaturgy", 225, {
 	["inert_staff_warped"] = 1,
-	["brilliant_energy"] = 120
+	["energy_brilliant"] = 120
 })
 --------------------------------------
 
 -- Thaumaturgy, Ingots
 RecipeDatabase["ingot_verdantite"] = Recipe.new("Embue Verdantite Ingot", 60, "thaumaturgy", 75, {
 	["ingot_verdantite_inert"] = 1,
-	["vibrant_energy"] = 100
+	["energy_vibrant"] = 100
 })
 
 RecipeDatabase["ingot_celestium"] = Recipe.new("Embue Celestium Ingot", 70, "thaumaturgy", 87.5, {
 	["ingot_celestium_inert"] = 1,
-	["lustrous_energy"] = 100
+	["energy_lustrous"] = 100
 })
 ----------------------
+
+-- Crafting, Flaxweave
+RecipeDatabase["hat_flaxweave_inert"] = Recipe.new("Weave Inert Flaxweave Hat", 1, "crafting", 0, {
+	["flax"] = 1
+})
+RecipeDatabase["robe_flaxweave_inert"] = Recipe.new("Weave Inert Flaxweave Robe", 1, "crafting", 0, {
+	["flax"] = 3
+})
+RecipeDatabase["skirt_flaxweave_inert"] = Recipe.new("Weave Inert Flaxweave Skirt", 1, "crafting", 0, {
+	["flax"] = 2
+})
+RecipeDatabase["slippers_flaxweave_inert"] = Recipe.new("Weave Inert Flaxweave Skippers", 1, "crafting", 0, {
+	["flax"] = 1
+})
+----------------------
+
+-- Thaumaturgy, Flaxweave
+RecipeDatabase["hat_flaxweave"] = Recipe.new("Embue Flaxweave Hat", 1, "thaumaturgy", 0, {
+	["hat_flaxweave_inert"] = 1,
+	["energy_pale"] = 10
+})
+RecipeDatabase["robe_flaxweave"] = Recipe.new("Embue Flaxweave Robe", 1, "thaumaturgy", 0, {
+	["robe_flaxweave_inert"] = 1,
+	["energy_pale"] = 30
+})
+RecipeDatabase["skirt_flaxweave"] = Recipe.new("Embue Flaxweave Skirt", 1, "thaumaturgy", 0, {
+	["skirt_flaxweave_inert"] = 1,
+	["energy_pale"] = 20
+})
+RecipeDatabase["slippers_flaxweave"] = Recipe.new("Embue Flaxweave Slippers", 1, "thaumaturgy", 0, {
+	["slippers_flaxweave_inert"] = 1,
+	["energy_pale"] = 10
+})
+----------------------
+
+-- Crafting, Moonwool
+RecipeDatabase["hood_moonwool_inert"] = Recipe.new("Weave Inert Moonwool Hood", 1, "crafting", 0, {
+	["moonwool"] = 1
+})
+RecipeDatabase["robe_moonwool_inert"] = Recipe.new("Weave Inert Moonwool Robe", 1, "crafting", 0, {
+	["moonwool"] = 3
+})
+RecipeDatabase["skirt_moonwool_inert"] = Recipe.new("Weave Inert Moonwool Skirt", 1, "crafting", 0, {
+	["moonwool"] = 2
+})
+RecipeDatabase["slippers_moonwool_inert"] = Recipe.new("Weave Inert Moonwool Skippers", 1, "crafting", 0, {
+	["moonwool"] = 1
+})
+----------------------
+
+-- Thaumaturgy, Moonwool
+RecipeDatabase["hood_moonwool"] = Recipe.new("Embue Moonwool Hood", 1, "thaumaturgy", 0, {
+	["hood_moonwool_inert"] = 1,
+	["energy_flickering"] = 10
+})
+RecipeDatabase["robe_moonwool"] = Recipe.new("Embue Moonwool Robe", 1, "thaumaturgy", 0, {
+	["robe_moonwool_inert"] = 1,
+	["energy_flickering"] = 30
+})
+RecipeDatabase["skirt_moonwool"] = Recipe.new("Embue Moonwool Skirt", 1, "thaumaturgy", 0, {
+	["skirt_moonwool_inert"] = 1,
+	["energy_flickering"] = 20
+})
+RecipeDatabase["slippers_moonwool"] = Recipe.new("Embue Moonwool Slippers", 1, "thaumaturgy", 0, {
+	["slippers_moonwool_inert"] = 1,
+	["energy_flickering"] = 10
+})
+------------------------
+
 
 -- Fletching, Other
 -- TODO: Figure out how to handle creating arrowshafts from the other woods

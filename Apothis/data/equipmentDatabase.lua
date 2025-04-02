@@ -677,12 +677,163 @@ EquipmentDatabase["staff_pale"] = Equipment.new("Pale Staff", "Two-Handed", {
 	modifiers = {
 		accuracy = { Stab = 0, Slash = 0, Crush = 0, Magic = 5, Ranged = 0 },
         defense = { Stab = 0, Slash = 0, Crush = 0, Magic = 0, Ranged = 0 },
-		bonus = { Melee = 0, Magic = 11, Ranged = 0 },
+		bonus = { Melee = 0, Magic = 14, Ranged = 0 },
 		attackSpeed = 0,
 		criticalChance = 0,
 		weight = 0
     }
 })
+---------------
+
+-- Flickering Weapons
+
+EquipmentDatabase["staff_flickering"] = Equipment.new("Flickering Staff", "Two-Handed", {
+	level = 10,
+	description = "",
+	attackType = "Magic",
+
+	modifiers = {
+		accuracy = { Stab = 0, Slash = 0, Crush = 0, Magic = 11, Ranged = 0 },
+        defense = { Stab = 0, Slash = 0, Crush = 0, Magic = 0, Ranged = 0 },
+		bonus = { Melee = 0, Magic = 21, Ranged = 0 },
+		attackSpeed = 0,
+		criticalChance = 0,
+		weight = 0
+    }
+})
+---------------------
+
+
+-- Flaxweave Robes | Set: 5 Accuracy, 5 Magic Bonus
+EquipmentDatabase["hat_flaxweave"] = Equipment.new("Flaxweave Hat", "Head", {
+	level = 1,
+	description = "",
+
+	modifiers = {
+        accuracy = { Stab = 0, Slash = 0, Crush = 0, Magic = 1, Ranged = 0 },
+		defense = { Stab = 0, Slash = 0, Crush = 0, Magic = 1, Ranged = 0 },
+		bonus = { Melee = 0, Magic = 1, Ranged = 0 },
+		attackSpeed = 0,
+		criticalChance = 0,
+		weight = 0
+    }
+})
+EquipmentDatabase["robe_flaxweave"] = Equipment.new("Flaxweave Robe", "Chest", {
+	level = 1,
+	description = "",
+
+	modifiers = {
+        accuracy = { Stab = 0, Slash = 0, Crush = 0, Magic = 2, Ranged = 0 },
+		defense = { Stab = 0, Slash = 0, Crush = 0, Magic = 2, Ranged = 0 },
+		bonus = { Melee = 0, Magic = 2, Ranged = 0 },
+		attackSpeed = 0,
+		criticalChance = 0,
+		weight = 0
+    }
+})
+EquipmentDatabase["skirt_flaxweave"] = Equipment.new("Flaxweave Skirt", "Legs", {
+	level = 1,
+	description = "",
+
+	modifiers = {
+        accuracy = { Stab = 0, Slash = 0, Crush = 0, Magic = 1, Ranged = 0 },
+		defense = { Stab = 0, Slash = 0, Crush = 0, Magic = 1, Ranged = 0 },
+		bonus = { Melee = 0, Magic = 1, Ranged = 0 },
+		attackSpeed = 0,
+		criticalChance = 0,
+		weight = 0
+    }
+})
+EquipmentDatabase["slippers_flaxweave"] = Equipment.new("Flaxweave Slippers", "Feet", {
+	level = 1,
+	description = "",
+
+	modifiers = {
+        accuracy = { Stab = 0, Slash = 0, Crush = 0, Magic = 1, Ranged = 0 },
+		defense = { Stab = 0, Slash = 0, Crush = 0, Magic = 1, Ranged = 0 },
+		bonus = { Melee = 0, Magic = 1, Ranged = 0 },
+		attackSpeed = 0,
+		criticalChance = 0,
+		weight = 0
+    }
+})
+-----------------
+
+-- Moonwool Robes | Set: 9 Accuracy, 9 Magic Bonus
+EquipmentDatabase["hood_moonwool"] = Equipment.new("Moonwool Hood", "Head", {
+	level = 10,
+	description = "",
+
+	modifiers = {
+        accuracy = { Stab = 0, Slash = 0, Crush = 0, Magic = 2, Ranged = 0 },
+		defense = { Stab = 0, Slash = 0, Crush = 0, Magic = 5, Ranged = 0 },
+		bonus = { Melee = 0, Magic = 2, Ranged = 0 },
+		attackSpeed = 0,
+		criticalChance = 0,
+		weight = 0
+    }
+})
+EquipmentDatabase["robe_moonwool"] = Equipment.new("Moonwool Robe", "Chest", {
+	level = 10,
+	description = "",
+
+	modifiers = {
+        accuracy = { Stab = 0, Slash = 0, Crush = 0, Magic = 3, Ranged = 0 },
+		defense = { Stab = 0, Slash = 0, Crush = 0, Magic = 5, Ranged = 0 },
+		bonus = { Melee = 0, Magic = 3, Ranged = 0 },
+		attackSpeed = 0,
+		criticalChance = 0,
+		weight = 0
+    }
+})
+EquipmentDatabase["skirt_moonwool"] = Equipment.new("Moonwool Skirt", "Legs", {
+	level = 10,
+	description = "",
+
+	modifiers = {
+        accuracy = { Stab = 0, Slash = 0, Crush = 0, Magic = 2, Ranged = 0 },
+		defense = { Stab = 0, Slash = 0, Crush = 0, Magic = 5, Ranged = 0 },
+		bonus = { Melee = 0, Magic = 2, Ranged = 0 },
+		attackSpeed = 0,
+		criticalChance = 0,
+		weight = 0
+    }
+})
+EquipmentDatabase["slippers_moonwool"] = Equipment.new("Moonwool Slippers", "Feet", {
+	level = 10,
+	description = "",
+
+	modifiers = {
+        accuracy = { Stab = 0, Slash = 0, Crush = 0, Magic = 2, Ranged = 0 },
+		defense = { Stab = 0, Slash = 0, Crush = 0, Magic = 5, Ranged = 0 },
+		bonus = { Melee = 0, Magic = 2, Ranged = 0 },
+		attackSpeed = 0,
+		criticalChance = 0,
+		weight = 0
+    }
+})
+-----------------
+
+-- Verdant Robes
+-----------------
+
+-- Emberweave Robes
+-----------------
+
+-- Stormborn Robes
+-----------------
+
+-- Shadowbloom Robes
+-----------------
+
+-- Astralweave Robes
+-----------------
+
+-- Eldertree Robes
+-----------------
+
+-- Ethereal Robes
+-----------------
 
 
 function EquipmentDatabase.getItem(name)
@@ -709,13 +860,19 @@ local function calculateDamage(attacker, defender, attackType)
 		local defenseStat = defenseLevel * (defenseRating + 64)
 
 		local accuracy = attackStat / (attackStat + defenseStat)
+		if accuracy > 1 then accuracy = 1 end
 
 		-- (((strengthLevel + potionBonus) * prayerBonus) + Style Bonus + 8) * Void Bonus
 		local effectiveStrength = (((strengthLevel + 0) * 1) + 3 + 8) * 1
 		local maxHit = math.floor(0.5 + (effectiveStrength * ((meleeBonus + 64) / 640)))
 		local minHit = math.floor((1 + ((accuracy ^ 2) / 2) * (maxHit - 1)) + 0.5)
 
-		local damage = math.floor((minHit + (maxHit - minHit) * math.random() ^ accuracy) + 0.5)
+		local rand = math.random()
+		local skewFactor = (maxHit - minHit) * (1 - accuracy)
+		local skewedRand = rand ^ skewFactor
+		local damage = math.floor((minHit + (maxHit - minHit) * skewedRand) + 0.5)
+
+		--local damage = math.floor((minHit + (maxHit - minHit) * math.random() ^ accuracy) + 0.5)
 	else if attackType == "Magic" then
 		local magicLevel = attacker.skills["magic"].level
 		local magicBonus = attacker.stats["bonus"]["magic"]
@@ -726,12 +883,18 @@ local function calculateDamage(attacker, defender, attackType)
 		local defenseStat = defenseLevel * (defenseRating + 64)
 
 		local accuracy = magicStat / (magicStat + defenseStat)
+		if accuracy > 1 then accuracy = 1 end
 
 		local effectiveMagic = (((magicLevel + 0) * 1) + magicBonus + 8) * 1
 		local maxHit = math.floor(0.5 + (effectiveMagic * ((magicBonus + 64) / 640)))
 		local minHit = math.floor((1 + ((accuracy ^ 2) / 2) * (maxHit - 1)) + 0.5)
 
-		local damage = math.floor((minHit + (maxHit - minHit) * math.random() ^ accuracy) + 0.5)
+		local rand = math.random()
+		local skewFactor = (maxHit - minHit) * (1 - accuracy)
+		local skewedRand = rand ^ skewFactor
+		local damage = math.floor((minHit + (maxHit - minHit) * skewedRand) + 0.5)
+
+		--local damage = math.floor((minHit + (maxHit - minHit) * math.random() ^ accuracy) + 0.5)
 	else if attackType == "Ranged" then
 
 	end
