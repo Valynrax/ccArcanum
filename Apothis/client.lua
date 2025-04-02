@@ -23,12 +23,12 @@ local function listenForCommands()
     -- Wait until the user has logged in to connect to their designated controller
     local clientUsername = nil
     while true do
-        local hasLogin, username = apothisAPI.Command("checkLoginStatus")
+        local hasLogin, user = apothisAPI.Command("checkLoginStatus")
 
         if hasLogin == false then
             os.sleep(5) -- Wait 5 seconds between checks
         else
-            clientUsername = username
+            clientUsername = user.login
             break
         end
     end

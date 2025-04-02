@@ -168,8 +168,13 @@ function apothisAPI.Command(cmd)
 
         connection:send({command = "close"})
     elseif cmd == "checkLoginStatus" then
-        -- Check if the user is logged in, if so, return true
-        -- Used for connecting to the controller
+        local user = arcanumAPI.getUser()
+
+        if user ~= false then
+            return true, user
+        else
+            return false, nil
+        end
     end
 end
 
