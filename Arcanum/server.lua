@@ -392,5 +392,5 @@ for _, Sdata in ipairs(runningServers) do
     end
 end
 
-print("Arcanum Master Server Initilaized on " .. getVersion())
+print("Arcanum Server Initilaized v" .. getVersion())
 parallel.waitForAny(main, broadcastServerName, ecnet2.daemon)

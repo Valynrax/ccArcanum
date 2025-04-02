@@ -20,9 +20,25 @@ local function getVersion()
     return version
 end
 
+local function getModemSide()
+    local sides = peripheral.getNames()
+    for _, side in ipairs(sides) do
+        if peripheral.getType(side) == "modem" then
+            return side
+        end
+    end
+    return nil
+end
+
 -- Function to find and store server addresses
 local function setArcanumServer()
-    local arcanumServers = arcanumAPI.getRunningServers(peripheral.getName(modem))
+    local modemSide = getModemSide()
+    if not modemSide then
+        printError("No modem found.")
+        return false
+    end
+
+    local arcanumServers = arcanumAPI.getRunningServers(modemSide)
     
     if #arcanumServers == 0 then
         printError("No Arcanum Server found!")
@@ -70,6 +86,12 @@ end
 
 -- Verify token with Arcanum, but only if it has expired from the cache
 local function verifyToken(token)
+    local modemSide = getModemSide()
+    if not modemSide then
+        printError("No modem found.")
+        return false
+    end
+
     local currentTime = os.epoch("utc") / 1000 -- Current Time in Seconds
 
     -- Check cache first
@@ -88,7 +110,7 @@ local function verifyToken(token)
         deserialize = textutils.unserialize,
     }
 
-    local connection = api:connect(arcanumServer, peripheral.getName(modem))
+    local connection = api:connect(arcanumServer, modemSide)
     if not connection then return false, "Cannot reach Arcanum" end
 
     connection:send({ command = "checkToken", token = token })
@@ -116,7 +138,7 @@ local function main()
         deserialize = textutils.unserialize,
     }
 
-    local listener = api:listen()
+    local apiListener = api:listen()
     local users = loadUsers()
     
     while true do
@@ -169,5 +191,5 @@ local function main()
     end
 end
 
-print("Apothis Master Server Initilaized on " .. getVersion())
+print("Apothis Server Initilaized v" .. getVersion())
 parallel.waitForAny(main, ecnet2.daemon)

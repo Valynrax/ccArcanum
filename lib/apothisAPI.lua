@@ -142,7 +142,7 @@ function apothisAPI.Command(cmd)
     
     local token = readToken()
     if not token then
-       connection:send({command = "close"})
+        connection:send({command = "close"})
         return false, "Missing authentication token"
     end
     
@@ -167,6 +167,9 @@ function apothisAPI.Command(cmd)
         -- TODO: Skills
 
         connection:send({command = "close"})
+    elseif cmd == "checkLoginStatus" then
+        -- Check if the user is logged in, if so, return true
+        -- Used for connecting to the controller
     end
 end
 

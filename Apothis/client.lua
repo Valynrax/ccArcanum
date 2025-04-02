@@ -1,40 +1,10 @@
 local apothisAPI = require "apothisAPI"
 local ecnet2 = require "ecnet2"
+local util = require "utilities"
+local identity = ecnet2.Identity(".identity")
 
 local disableLogging = true
 local clientData = { health = nil, maxHealth = nil }
-
-local function log(message)
-    if not disableLogging then
-        print("[Apothis Client] " .. message)
-    end
-end
-
-local function getServer(serverType)
-    if not fs.exists(".addresses.txt") then
-        printError(".addresses.txt not found")
-        return nil
-    end
-
-    local file = fs.open(".addresses.txt", "r")
-    local data = textutils.unserialize(file.readAll())
-    file.close()
-
-    --print(data)
-    --print(data[serverType])
-    return data and data[serverType] or nil
-end
-
-local function getVersion()
-    local currentDirectory = fs.getDir(shell.getRunningProgram())
-    local versionFile = fs.open(currentDirectory .. "/version.txt", "r")
-    if not versionFile then
-        return "0.0.0"
-    end
-    local version = versionFile.readAll()
-    versionFile.close()
-    return version
-end
 
 -- Function to process commands from controller
 local function handleCommand(command)
@@ -43,59 +13,89 @@ local function handleCommand(command)
     elseif command == "interact" then
         apothisAPI.Interact("interact")
     else
-        log("Unknown command from controller: " .. command)
+        util.log("Unknown command from controller: " .. command)
     end
 end
 
 -- Function to listen for commands from the controller
 local function listenForCommands()
-    local identity = ecnet2.Identity(".identity")
+    
+    -- Wait until the user has logged in to connect to their designated controller
+    local clientUsername = nil
+    while true do
+        local hasLogin, username = apothisAPI.Command("checkLoginStatus")
+
+        if hasLogin == false then
+            os.sleep(5) -- Wait 5 seconds between checks
+        else
+            clientUsername = username
+            break
+        end
+    end
 
     local api = identity:Protocol {
-        name = "apothisController",
+        name = "apothisController_" .. clientUsername,
         serialize = textutils.serialize,
         deserialize = textutils.unserialize,
     }
 
-    local listener = api:listen()
-    print("Listening for controller commands...")
+    local apiListener = api:listen()
+    print("Awaiting connection to Controller...")
 
     while true do
         local event, id, p2, p3, ch, dist = os.pullEvent()
         local requestTime = os.time(os.date("*t"))
+
         if event == "ecnet2_request" and id == apiListener.id then
-            local data = message
-            if data and data.command then
-                print("Received command: " .. data.command)
-                handleCommand(data.command)
+            -- Accept the request and send a greeting message.
+            local connection = apiListener:accept("Connected to Controller", p2)
+            connections[connection.id] = connection
+
+        elseif event == "ecnet2_message" and connections[id] then
+            local data = select(1, p3)
+            local command = data['command']
+
+            if command == "close" then
+                connections[id] = nil -- Close Connection
+
+            elseif data and command then
+                print("Received command: " .. command)
+                handleCommand(command)
             end
         end
     end
 end
 
+--[[
 local function listenForMessages()
-    local identity = ecnet2.Identity(".identity")
-
     local api = identity:Protocol {
         name = "apothisAPI",
         serialize = textutils.serialize,
         deserialize = textutils.unserialize,
     }
 
-    local listener = api:listen()
+    local apiListener = api:listen()
     print("Listening for ApothisAPI messages")
 
     while true do
         local event, id, p2, p3, ch, dist = os.pullEvent()
         local requestTime = os.time(os.date("*t"))
         if event == "ecnet2_request" and id == apiListener.id then
-            local data = message
-            if data and data.command then
-                print(data.command)
+            -- Accept the request and send a greeting message.
+            local connection = apiListener:accept("Connected to Apothis API", p2)
+            connections[connection.id] = connection
+
+        elseif event == "ecnet2_message" and connections[id] then
+            local data = select(1, p3)
+            local command = data['command']
+
+            if data and command then
+                print("Received command: " .. command)
             end
         end
     end  
 end
+]]--
 
 local function redraw()
     term.clear()
@@ -134,28 +134,12 @@ local function handleUserInput()
     end
 end
 
-local function getModemSide()
-    local sides = peripheral.getNames()
-    for _, side in ipairs(sides) do
-        if peripheral.getType(side) == "modem" then
-            return side
-        end
-    end
-    return nil
-end
-
 -- Main function to initialize everything
-local function main()
-    local modemSide = getModemSide()
-    if not modemSide then
-        printError("No modem found.")
-        return false
-    end
-    
+local function main()    
     if not fs.exists(".addresses.txt") then
         local arcanumAPI = require "arcanumAPI"
-        local apothisServers = apothisAPI.getRunningServers(modemSide)
-        local arcanumServers = arcanumAPI.getRunningServers(modemSide)
+        local apothisServers = apothisAPI.getRunningServers(util.getModemSide())
+        local arcanumServers = arcanumAPI.getRunningServers(util.getModemSide())
         
         if #apothisServers == 0 or #arcanumServers == 0 then
             print("No Apothis or Arcanum Servers found")
@@ -174,23 +158,24 @@ local function main()
         file.close()
     end
     
-    local apothisServer = getServer("apothis")
+    local apothisServer = util.getServer("apothis")
 
     if not apothisServer then
         printError("Could not retrieve server addresses")
         return
     end
 
-    local isInitiatedApothis = apothisAPI.init(apothisServer, modemSide, log)
+    local isInitiatedApothis = apothisAPI.init(apothisServer, util.getModemSide(), util.log)
 
     if isInitiatedApothis == false then
         printError("Apothis API failed to initialize")
         return
     end
 
-    os.setComputerLabel("[Name] - AC v" .. getVersion())
-    print("Client Initialized successfully")
+    os.setComputerLabel("[Name] - AC v" .. util.getVersion())
+    print("Client Initialized")
 end
 
 main()
-parallel.waitForAny(listenForCommands, listenForMessages, handleUserInput)
+-- Re-add listenForMessages to parallel at a later date
+parallel.waitForAny(listenForCommands, handleUserInput)

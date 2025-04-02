@@ -13,6 +13,7 @@ DOWNLOADS[#DOWNLOADS + 1] = "https://raw.githubusercontent.com/Valynrax/ccArcanu
 DOWNLOADS[#DOWNLOADS + 1] = "https://raw.githubusercontent.com/Valynrax/ccArcanum/main/Apothis/data/recipeDatabase.lua"
 DOWNLOADS[#DOWNLOADS + 1] = "https://raw.githubusercontent.com/Valynrax/ccArcanum/main/Apothis/objects/equipment.lua"
 DOWNLOADS[#DOWNLOADS + 1] = "https://raw.githubusercontent.com/Valynrax/ccArcanum/main/Apothis/objects/recipe.lua"
+DOWNLOADS[#DOWNLOADS + 1] = "https://raw.githubusercontent.com/Valynrax/ccArcanum/main/lib/utilities.lua"
 
 local disableComputerValidation = false
 local width, height = term.getSize()
