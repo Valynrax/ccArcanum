@@ -1,6 +1,6 @@
 local Equipment = require "equipment"
 
-local EquipmentDatabase = {}
+local ItemDatabase = {}
 
 -- Bronze (Copper + Tin)
 -- Iron
@@ -12,7 +12,7 @@ local EquipmentDatabase = {}
 -- Celestium (Ancient Debris + Diamond)
 
 -- Example Weapon
-EquipmentDatabase["example_weapon_dual_wielding"] = Equipment.new("Example Weapon", "EitherHand", {
+ItemDatabase["example_weapon_dual_wielding"] = Equipment.new("Example Weapon", "EitherHand", {
 	level = 1,
 	description = "This is a developer item, how do you have this?",
 	attackType = "Melee", -- Magic, or Ranged
@@ -28,7 +28,7 @@ EquipmentDatabase["example_weapon_dual_wielding"] = Equipment.new("Example Weapo
 })
 
 -- Example Armor Piece
-EquipmentDatabase["example_armor_piece"] = Equipment.new("Example Armor", "Head", {
+ItemDatabase["example_armor_piece"] = Equipment.new("Example Armor", "Head", {
 	level = 1,
 	description = "This is a developer item, how do you have this?",
 
@@ -43,7 +43,7 @@ EquipmentDatabase["example_armor_piece"] = Equipment.new("Example Armor", "Head"
 })
 
 -- Bronze Weapons
-EquipmentDatabase["dagger_bronze"] = Equipment.new("Bronze Dagger", "EitherHand", {
+ItemDatabase["dagger_bronze"] = Equipment.new("Bronze Dagger", "EitherHand", {
 	level = 1,
 	description = "",
 	attackType = "Melee",
@@ -57,7 +57,7 @@ EquipmentDatabase["dagger_bronze"] = Equipment.new("Bronze Dagger", "EitherHand"
 		weight = 0
     }
 })
-EquipmentDatabase["shortsword_bronze"] = Equipment.new("Bronze Shortsword", "EitherHand", {
+ItemDatabase["shortsword_bronze"] = Equipment.new("Bronze Shortsword", "EitherHand", {
 	level = 1,
 	description = "",
 	attackType = "Melee",
@@ -71,7 +71,7 @@ EquipmentDatabase["shortsword_bronze"] = Equipment.new("Bronze Shortsword", "Eit
 		weight = 0
     }
 })
-EquipmentDatabase["scimitar_bronze"] = Equipment.new("Bronze Scimitar", "MainHand", {
+ItemDatabase["scimitar_bronze"] = Equipment.new("Bronze Scimitar", "MainHand", {
 	level = 1,
 	description = "",
 	attackType = "Melee",
@@ -85,7 +85,7 @@ EquipmentDatabase["scimitar_bronze"] = Equipment.new("Bronze Scimitar", "MainHan
 		weight = 0
     }
 })
-EquipmentDatabase["mace_bronze"] = Equipment.new("Bronze Mace", "MainHand", {
+ItemDatabase["mace_bronze"] = Equipment.new("Bronze Mace", "MainHand", {
 	level = 1,
 	description = "",
 	attackType = "Melee",
@@ -99,7 +99,7 @@ EquipmentDatabase["mace_bronze"] = Equipment.new("Bronze Mace", "MainHand", {
 		weight = 0
     }
 })
-EquipmentDatabase["warhammer_bronze"] = Equipment.new("Bronze Warhammer", "MainHand", {
+ItemDatabase["warhammer_bronze"] = Equipment.new("Bronze Warhammer", "MainHand", {
 	level = 1,
 	description = "",
 	attackType = "Melee",
@@ -113,7 +113,7 @@ EquipmentDatabase["warhammer_bronze"] = Equipment.new("Bronze Warhammer", "MainH
 		weight = 0
     }
 })
-EquipmentDatabase["rapier_bronze"] = Equipment.new("Bronze Rapier", "MainHand", {
+ItemDatabase["rapier_bronze"] = Equipment.new("Bronze Rapier", "MainHand", {
 	level = 1,
 	description = "",
 	attackType = "Melee",
@@ -127,7 +127,7 @@ EquipmentDatabase["rapier_bronze"] = Equipment.new("Bronze Rapier", "MainHand", 
 		weight = 0
     }
 })
-EquipmentDatabase["battleaxe_bronze"] = Equipment.new("Bronze Battleaxe", "MainHand", {
+ItemDatabase["battleaxe_bronze"] = Equipment.new("Bronze Battleaxe", "MainHand", {
 	level = 1,
 	description = "",
 	attackType = "Melee",
@@ -141,7 +141,7 @@ EquipmentDatabase["battleaxe_bronze"] = Equipment.new("Bronze Battleaxe", "MainH
 		weight = 0
     }
 })
-EquipmentDatabase["longsword_bronze"] = Equipment.new("Bronze Longsword", "MainHand", {
+ItemDatabase["longsword_bronze"] = Equipment.new("Bronze Longsword", "MainHand", {
 	level = 1,
 	description = "",
 	attackType = "Melee",
@@ -155,7 +155,7 @@ EquipmentDatabase["longsword_bronze"] = Equipment.new("Bronze Longsword", "MainH
 		weight = 0
     }
 })
-EquipmentDatabase["greatsword_bronze"] = Equipment.new("Bronze Greatsword", "Two-Handed", {
+ItemDatabase["greatsword_bronze"] = Equipment.new("Bronze Greatsword", "Two-Handed", {
 	level = 1,
 	description = "",
 	attackType = "Melee",
@@ -169,7 +169,7 @@ EquipmentDatabase["greatsword_bronze"] = Equipment.new("Bronze Greatsword", "Two
 		weight = 0
     }
 })
-EquipmentDatabase["maul_bronze"] = Equipment.new("Bronze Maul", "Two-Handed", {
+ItemDatabase["maul_bronze"] = Equipment.new("Bronze Maul", "Two-Handed", {
 	level = 1,
 	description = "",
 	attackType = "Melee",
@@ -183,7 +183,7 @@ EquipmentDatabase["maul_bronze"] = Equipment.new("Bronze Maul", "Two-Handed", {
 		weight = 0
     }
 })
-EquipmentDatabase["claws_bronze"] = Equipment.new("Bronze Claws", "Two-Handed", {
+ItemDatabase["claws_bronze"] = Equipment.new("Bronze Claws", "Two-Handed", {
 	level = 1,
 	description = "",
 	attackType = "Melee",
@@ -199,7 +199,7 @@ EquipmentDatabase["claws_bronze"] = Equipment.new("Bronze Claws", "Two-Handed", 
 })
 
 -- Bronze Armor
-EquipmentDatabase["helmet_bronze"] = Equipment.new("Bronze Helmet", "Head", {
+ItemDatabase["helmet_bronze"] = Equipment.new("Bronze Helmet", "Head", {
 	level = 1,
 	description = "",
 
@@ -212,7 +212,7 @@ EquipmentDatabase["helmet_bronze"] = Equipment.new("Bronze Helmet", "Head", {
 		weight = 0
     }
 })
-EquipmentDatabase["chainbody_bronze"] = Equipment.new("Bronze Chainbody", "Chest", {
+ItemDatabase["chainbody_bronze"] = Equipment.new("Bronze Chainbody", "Chest", {
 	level = 1,
 	description = "",
 
@@ -225,7 +225,7 @@ EquipmentDatabase["chainbody_bronze"] = Equipment.new("Bronze Chainbody", "Chest
 		weight = 0
     }
 })
-EquipmentDatabase["r_chausses_bronze"] = Equipment.new("Bronze Reinforced Chausses", "Legs", {
+ItemDatabase["r_chausses_bronze"] = Equipment.new("Bronze Reinforced Chausses", "Legs", {
 	level = 1,
 	description = "",
 
@@ -238,7 +238,7 @@ EquipmentDatabase["r_chausses_bronze"] = Equipment.new("Bronze Reinforced Chauss
 		weight = 0
     }
 })
-EquipmentDatabase["r_gloves_bronze"] = Equipment.new("Bronze Reinforced Gloves", "Hands", {
+ItemDatabase["r_gloves_bronze"] = Equipment.new("Bronze Reinforced Gloves", "Hands", {
 	level = 1,
 	description = "",
 
@@ -251,7 +251,7 @@ EquipmentDatabase["r_gloves_bronze"] = Equipment.new("Bronze Reinforced Gloves",
 		weight = 0
     }
 })
-EquipmentDatabase["r_boots_bronze"] = Equipment.new("Bronze Reinforced Boots", "Feet", {
+ItemDatabase["r_boots_bronze"] = Equipment.new("Bronze Reinforced Boots", "Feet", {
 	level = 1,
 	description = "",
 
@@ -265,7 +265,7 @@ EquipmentDatabase["r_boots_bronze"] = Equipment.new("Bronze Reinforced Boots", "
     }
 })
 
-EquipmentDatabase["plate_helmet_bronze"] = Equipment.new("Bronze Plate Helmet", "Head", {
+ItemDatabase["plate_helmet_bronze"] = Equipment.new("Bronze Plate Helmet", "Head", {
 	level = 5,
 	description = "",
 
@@ -278,7 +278,7 @@ EquipmentDatabase["plate_helmet_bronze"] = Equipment.new("Bronze Plate Helmet", 
 		weight = 0
     }
 })
-EquipmentDatabase["chestplate_bronze"] = Equipment.new("Bronze Chestplate", "Chest", {
+ItemDatabase["chestplate_bronze"] = Equipment.new("Bronze Chestplate", "Chest", {
 	level = 5,
 	description = "",
 
@@ -291,7 +291,7 @@ EquipmentDatabase["chestplate_bronze"] = Equipment.new("Bronze Chestplate", "Che
 		weight = 0
     }
 })
-EquipmentDatabase["p_chausses_bronze"] = Equipment.new("Bronze Plate Chausses", "Legs", {
+ItemDatabase["p_chausses_bronze"] = Equipment.new("Bronze Plate Chausses", "Legs", {
 	level = 5,
 	description = "",
 
@@ -304,7 +304,7 @@ EquipmentDatabase["p_chausses_bronze"] = Equipment.new("Bronze Plate Chausses", 
 		weight = 0
     }
 })
-EquipmentDatabase["gauntlets_bronze"] = Equipment.new("Bronze Gauntlets", "Hands", {
+ItemDatabase["gauntlets_bronze"] = Equipment.new("Bronze Gauntlets", "Hands", {
 	level = 5,
 	description = "",
 
@@ -317,7 +317,7 @@ EquipmentDatabase["gauntlets_bronze"] = Equipment.new("Bronze Gauntlets", "Hands
 		weight = 0
     }
 })
-EquipmentDatabase["p_greaves_bronze"] = Equipment.new("Bronze Plate Greaves", "Feet", {
+ItemDatabase["p_greaves_bronze"] = Equipment.new("Bronze Plate Greaves", "Feet", {
 	level = 5,
 	description = "",
 
@@ -332,7 +332,7 @@ EquipmentDatabase["p_greaves_bronze"] = Equipment.new("Bronze Plate Greaves", "F
 })
 
 -- Iron Weapons
-EquipmentDatabase["dagger_iron"] = Equipment.new("Iron Dagger", "EitherHand", {
+ItemDatabase["dagger_iron"] = Equipment.new("Iron Dagger", "EitherHand", {
 	level = 10,
 	description = "",
 	attackType = "Melee",
@@ -346,7 +346,7 @@ EquipmentDatabase["dagger_iron"] = Equipment.new("Iron Dagger", "EitherHand", {
 		weight = 0
     }
 })
-EquipmentDatabase["shortsword_iron"] = Equipment.new("Iron Shortsword", "EitherHand", {
+ItemDatabase["shortsword_iron"] = Equipment.new("Iron Shortsword", "EitherHand", {
 	level = 10,
 	description = "",
 	attackType = "Melee",
@@ -360,7 +360,7 @@ EquipmentDatabase["shortsword_iron"] = Equipment.new("Iron Shortsword", "EitherH
 		weight = 0
     }
 })
-EquipmentDatabase["scimitar_iron"] = Equipment.new("Iron Scimitar", "MainHand", {
+ItemDatabase["scimitar_iron"] = Equipment.new("Iron Scimitar", "MainHand", {
 	level = 10,
 	description = "",
 	attackType = "Melee",
@@ -374,7 +374,7 @@ EquipmentDatabase["scimitar_iron"] = Equipment.new("Iron Scimitar", "MainHand", 
 		weight = 0
     }
 })
-EquipmentDatabase["mace_iron"] = Equipment.new("Iron Mace", "MainHand", {
+ItemDatabase["mace_iron"] = Equipment.new("Iron Mace", "MainHand", {
 	level = 10,
 	description = "",
 	attackType = "Melee",
@@ -388,7 +388,7 @@ EquipmentDatabase["mace_iron"] = Equipment.new("Iron Mace", "MainHand", {
 		weight = 0
     }
 })
-EquipmentDatabase["warhammer_iron"] = Equipment.new("Iron Warhammer", "MainHand", {
+ItemDatabase["warhammer_iron"] = Equipment.new("Iron Warhammer", "MainHand", {
 	level = 10,
 	description = "",
 	attackType = "Melee",
@@ -402,7 +402,7 @@ EquipmentDatabase["warhammer_iron"] = Equipment.new("Iron Warhammer", "MainHand"
 		weight = 0
     }
 })
-EquipmentDatabase["rapier_iron"] = Equipment.new("Iron Rapier", "MainHand", {
+ItemDatabase["rapier_iron"] = Equipment.new("Iron Rapier", "MainHand", {
 	level = 10,
 	description = "",
 	attackType = "Melee",
@@ -416,7 +416,7 @@ EquipmentDatabase["rapier_iron"] = Equipment.new("Iron Rapier", "MainHand", {
 		weight = 0
     }
 })
-EquipmentDatabase["battleaxe_iron"] = Equipment.new("Iron Battleaxe", "MainHand", {
+ItemDatabase["battleaxe_iron"] = Equipment.new("Iron Battleaxe", "MainHand", {
 	level = 10,
 	description = "",
 	attackType = "Melee",
@@ -430,7 +430,7 @@ EquipmentDatabase["battleaxe_iron"] = Equipment.new("Iron Battleaxe", "MainHand"
 		weight = 0
     }
 })
-EquipmentDatabase["longsword_iron"] = Equipment.new("Iron Longsword", "MainHand", {
+ItemDatabase["longsword_iron"] = Equipment.new("Iron Longsword", "MainHand", {
 	level = 10,
 	description = "",
 	attackType = "Melee",
@@ -444,7 +444,7 @@ EquipmentDatabase["longsword_iron"] = Equipment.new("Iron Longsword", "MainHand"
 		weight = 0
     }
 })
-EquipmentDatabase["greatsword_iron"] = Equipment.new("Iron Greatsword", "Two-Handed", {
+ItemDatabase["greatsword_iron"] = Equipment.new("Iron Greatsword", "Two-Handed", {
 	level = 10,
 	description = "",
 	attackType = "Melee",
@@ -458,7 +458,7 @@ EquipmentDatabase["greatsword_iron"] = Equipment.new("Iron Greatsword", "Two-Han
 		weight = 0
     }
 })
-EquipmentDatabase["maul_iron"] = Equipment.new("Iron Maul", "Two-Handed", {
+ItemDatabase["maul_iron"] = Equipment.new("Iron Maul", "Two-Handed", {
 	level = 10,
 	description = "",
 	attackType = "Melee",
@@ -472,7 +472,7 @@ EquipmentDatabase["maul_iron"] = Equipment.new("Iron Maul", "Two-Handed", {
 		weight = 0
     }
 })
-EquipmentDatabase["claws_iron"] = Equipment.new("Iron Claws", "Two-Handed", {
+ItemDatabase["claws_iron"] = Equipment.new("Iron Claws", "Two-Handed", {
 	level = 10,
 	description = "",
 	attackType = "Melee",
@@ -488,7 +488,7 @@ EquipmentDatabase["claws_iron"] = Equipment.new("Iron Claws", "Two-Handed", {
 })
 
 -- Iron Armor
-EquipmentDatabase["helmet_iron"] = Equipment.new("Iron Helmet", "Head", {
+ItemDatabase["helmet_iron"] = Equipment.new("Iron Helmet", "Head", {
 	level = 10,
 	description = "",
 
@@ -501,7 +501,7 @@ EquipmentDatabase["helmet_iron"] = Equipment.new("Iron Helmet", "Head", {
 		weight = 0
     }
 })
-EquipmentDatabase["chainbody_iron"] = Equipment.new("Iron Chainbody", "Chest", {
+ItemDatabase["chainbody_iron"] = Equipment.new("Iron Chainbody", "Chest", {
 	level = 10,
 	description = "",
 
@@ -514,7 +514,7 @@ EquipmentDatabase["chainbody_iron"] = Equipment.new("Iron Chainbody", "Chest", {
 		weight = 0
     }
 })
-EquipmentDatabase["r_chausses_iron"] = Equipment.new("Iron Reinforced Chausses", "Legs", {
+ItemDatabase["r_chausses_iron"] = Equipment.new("Iron Reinforced Chausses", "Legs", {
 	level = 10,
 	description = "",
 
@@ -527,7 +527,7 @@ EquipmentDatabase["r_chausses_iron"] = Equipment.new("Iron Reinforced Chausses",
 		weight = 0
     }
 })
-EquipmentDatabase["r_gloves_iron"] = Equipment.new("Iron Reinforced Gloves", "Hands", {
+ItemDatabase["r_gloves_iron"] = Equipment.new("Iron Reinforced Gloves", "Hands", {
 	level = 10,
 	description = "",
 
@@ -540,7 +540,7 @@ EquipmentDatabase["r_gloves_iron"] = Equipment.new("Iron Reinforced Gloves", "Ha
 		weight = 0
     }
 })
-EquipmentDatabase["r_boots_iron"] = Equipment.new("Iron Reinforced Boots", "Feet", {
+ItemDatabase["r_boots_iron"] = Equipment.new("Iron Reinforced Boots", "Feet", {
 	level = 10,
 	description = "",
 
@@ -554,7 +554,7 @@ EquipmentDatabase["r_boots_iron"] = Equipment.new("Iron Reinforced Boots", "Feet
     }
 })
 
-EquipmentDatabase["plate_helmet_iron"] = Equipment.new("Iron Plate Helmet", "Head", {
+ItemDatabase["plate_helmet_iron"] = Equipment.new("Iron Plate Helmet", "Head", {
 	level = 15,
 	description = "",
 
@@ -567,7 +567,7 @@ EquipmentDatabase["plate_helmet_iron"] = Equipment.new("Iron Plate Helmet", "Hea
 		weight = 0
     }
 })
-EquipmentDatabase["chestplate_iron"] = Equipment.new("Iron Chestplate", "Chest", {
+ItemDatabase["chestplate_iron"] = Equipment.new("Iron Chestplate", "Chest", {
 	level = 15,
 	description = "",
 
@@ -580,7 +580,7 @@ EquipmentDatabase["chestplate_iron"] = Equipment.new("Iron Chestplate", "Chest",
 		weight = 0
     }
 })
-EquipmentDatabase["p_chausses_iron"] = Equipment.new("Iron Plate Chausses", "Legs", {
+ItemDatabase["p_chausses_iron"] = Equipment.new("Iron Plate Chausses", "Legs", {
 	level = 15,
 	description = "",
 
@@ -593,7 +593,7 @@ EquipmentDatabase["p_chausses_iron"] = Equipment.new("Iron Plate Chausses", "Leg
 		weight = 0
     }
 })
-EquipmentDatabase["gauntlets_iron"] = Equipment.new("Iron Gauntlets", "Hands", {
+ItemDatabase["gauntlets_iron"] = Equipment.new("Iron Gauntlets", "Hands", {
 	level = 15,
 	description = "",
 
@@ -606,7 +606,7 @@ EquipmentDatabase["gauntlets_iron"] = Equipment.new("Iron Gauntlets", "Hands", {
 		weight = 0
     }
 })
-EquipmentDatabase["p_greaves_iron"] = Equipment.new("Iron Plate Greaves", "Feet", {
+ItemDatabase["p_greaves_iron"] = Equipment.new("Iron Plate Greaves", "Feet", {
 	level = 15,
 	description = "",
 
@@ -639,7 +639,7 @@ EquipmentDatabase["p_greaves_iron"] = Equipment.new("Iron Plate Greaves", "Feet"
 -- Celestium Armor
 
 -- Pale Weapons
-EquipmentDatabase["wand_pale"] = Equipment.new("Pale Wand", "MainHand", {
+ItemDatabase["wand_pale"] = Equipment.new("Pale Wand", "MainHand", {
 	level = 1,
 	description = "",
 	attackType = "Magic",
@@ -654,7 +654,7 @@ EquipmentDatabase["wand_pale"] = Equipment.new("Pale Wand", "MainHand", {
     }
 })
 
-EquipmentDatabase["core_pale"] = Equipment.new("Pale Core", "OffHand", {
+ItemDatabase["core_pale"] = Equipment.new("Pale Core", "OffHand", {
 	level = 1,
 	description = "",
 	attackType = "Magic",
@@ -669,7 +669,7 @@ EquipmentDatabase["core_pale"] = Equipment.new("Pale Core", "OffHand", {
     }
 })
 
-EquipmentDatabase["staff_pale"] = Equipment.new("Pale Staff", "Two-Handed", {
+ItemDatabase["staff_pale"] = Equipment.new("Pale Staff", "Two-Handed", {
 	level = 1,
 	description = "",
 	attackType = "Magic",
@@ -687,7 +687,7 @@ EquipmentDatabase["staff_pale"] = Equipment.new("Pale Staff", "Two-Handed", {
 
 -- Flickering Weapons
 
-EquipmentDatabase["staff_flickering"] = Equipment.new("Flickering Staff", "Two-Handed", {
+ItemDatabase["staff_flickering"] = Equipment.new("Flickering Staff", "Two-Handed", {
 	level = 10,
 	description = "",
 	attackType = "Magic",
@@ -705,7 +705,7 @@ EquipmentDatabase["staff_flickering"] = Equipment.new("Flickering Staff", "Two-H
 
 
 -- Flaxweave Robes | Set: 5 Accuracy, 5 Magic Bonus
-EquipmentDatabase["hat_flaxweave"] = Equipment.new("Flaxweave Hat", "Head", {
+ItemDatabase["hat_flaxweave"] = Equipment.new("Flaxweave Hat", "Head", {
 	level = 1,
 	description = "",
 
@@ -718,7 +718,7 @@ EquipmentDatabase["hat_flaxweave"] = Equipment.new("Flaxweave Hat", "Head", {
 		weight = 0
     }
 })
-EquipmentDatabase["robe_flaxweave"] = Equipment.new("Flaxweave Robe", "Chest", {
+ItemDatabase["robe_flaxweave"] = Equipment.new("Flaxweave Robe", "Chest", {
 	level = 1,
 	description = "",
 
@@ -731,7 +731,7 @@ EquipmentDatabase["robe_flaxweave"] = Equipment.new("Flaxweave Robe", "Chest", {
 		weight = 0
     }
 })
-EquipmentDatabase["skirt_flaxweave"] = Equipment.new("Flaxweave Skirt", "Legs", {
+ItemDatabase["skirt_flaxweave"] = Equipment.new("Flaxweave Skirt", "Legs", {
 	level = 1,
 	description = "",
 
@@ -744,7 +744,7 @@ EquipmentDatabase["skirt_flaxweave"] = Equipment.new("Flaxweave Skirt", "Legs", 
 		weight = 0
     }
 })
-EquipmentDatabase["slippers_flaxweave"] = Equipment.new("Flaxweave Slippers", "Feet", {
+ItemDatabase["slippers_flaxweave"] = Equipment.new("Flaxweave Slippers", "Feet", {
 	level = 1,
 	description = "",
 
@@ -760,7 +760,7 @@ EquipmentDatabase["slippers_flaxweave"] = Equipment.new("Flaxweave Slippers", "F
 -----------------
 
 -- Moonwool Robes | Set: 9 Accuracy, 9 Magic Bonus
-EquipmentDatabase["hood_moonwool"] = Equipment.new("Moonwool Hood", "Head", {
+ItemDatabase["hood_moonwool"] = Equipment.new("Moonwool Hood", "Head", {
 	level = 10,
 	description = "",
 
@@ -773,7 +773,7 @@ EquipmentDatabase["hood_moonwool"] = Equipment.new("Moonwool Hood", "Head", {
 		weight = 0
     }
 })
-EquipmentDatabase["robe_moonwool"] = Equipment.new("Moonwool Robe", "Chest", {
+ItemDatabase["robe_moonwool"] = Equipment.new("Moonwool Robe", "Chest", {
 	level = 10,
 	description = "",
 
@@ -786,7 +786,7 @@ EquipmentDatabase["robe_moonwool"] = Equipment.new("Moonwool Robe", "Chest", {
 		weight = 0
     }
 })
-EquipmentDatabase["skirt_moonwool"] = Equipment.new("Moonwool Skirt", "Legs", {
+ItemDatabase["skirt_moonwool"] = Equipment.new("Moonwool Skirt", "Legs", {
 	level = 10,
 	description = "",
 
@@ -799,7 +799,7 @@ EquipmentDatabase["skirt_moonwool"] = Equipment.new("Moonwool Skirt", "Legs", {
 		weight = 0
     }
 })
-EquipmentDatabase["slippers_moonwool"] = Equipment.new("Moonwool Slippers", "Feet", {
+ItemDatabase["slippers_moonwool"] = Equipment.new("Moonwool Slippers", "Feet", {
 	level = 10,
 	description = "",
 
@@ -836,11 +836,11 @@ EquipmentDatabase["slippers_moonwool"] = Equipment.new("Moonwool Slippers", "Fee
 -----------------
 
 
-function EquipmentDatabase.getItem(name)
-	return EquipmentDatabase[name] or nil
+function ItemDatabase.getItem(name)
+	return ItemDatabase[name] or nil
 end
 
-return EquipmentDatabase
+return ItemDatabase
 
 --[[
 local function calculateDamage(attacker, defender, attackType)
