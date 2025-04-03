@@ -139,19 +139,28 @@ local function main()
     if not fs.exists(".addresses.txt") then
         local arcanumAPI = require "arcanumAPI"
         local apothisServers = apothisAPI.getRunningServers(util.getModemSide())
+        -- local availableControllers = apothisAPI.getAvailableControllers(util.getModemSide())
         local arcanumServers = arcanumAPI.getRunningServers(util.getModemSide())
         
-        if #apothisServers == 0 or #arcanumServers == 0 then
+        if #apothisServers == 0 or #arcanumServers == 0 or #availableControllers == 0 then
             print("No Apothis or Arcanum Servers found")
             return
         end
+
+        if #apothisServers == 0 then print("No Apothis Servers found") return end
+        if #arcanumServers == 0 then print("No Arcanum Servers found") return end
+        if #availableControllers == 0 then print("No Apothis Controllers available") return end
+
+        -- TODO: Inform the selected Controller that it has a client now
+        -- Send the clients address for sending redstone signal purposes
 
         -- FUTURE: Allow selection of server (for "Realms" of sort)
         -- Might need a UI framework for that
         local file = fs.open(".addresses.txt", "w")
         local addresses = {
             ["apothis"] = apothisServers[1].address,
-            ["arcanum"] = arcanumServers[1].address
+            ["arcanum"] = arcanumServers[1].address,
+            ["controller"] = availableControllers[1].address
         }
         
         file.write(textutils.serialize(addresses))
